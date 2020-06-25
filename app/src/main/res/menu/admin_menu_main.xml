@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/adminproduct"
+        android:title="Product"
+        android:icon="@drawable/ic_home_black_24dp"/>
+    <item android:id="@+id/adminorder"
+        android:title="Orders"
+        android:icon="@drawable/ic_reorder_black_24dp"/>
+    <item android:id="@+id/adminpromotion"
+        android:title="Promotiont"
+        android:icon="@drawable/ic_shopping_cart_black_24dp"/>
+    <item android:id="@+id/admincustomer"
+        android:title="Staff"
+        android:icon="@drawable/ic_account_circle_black_24dp"/>
+    <item android:id="@+id/adminstaff"
+        android:title="Customer"
+        android:icon="@drawable/ic_account_circle_black_24dp"/>
+</menu>

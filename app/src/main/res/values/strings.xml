@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FoodOrderingApp</string>
+    <string name="ngaysinh">Ngày sinh:</string>
+    <string name="ho">Họ:</string>
+    <string name="gioitinh">Giới tính:</string>
+    <string name="ten">Tên: </string>
+    <string name="email">Email: </string>
+    <string name="sdt">Số điện thoại: </string>
+    <string name="dchi">Địa chỉ:</string>
+    <string name="tendn">Tên đăng nhập:</string>
+    <string name="suathongtin">Sửa thông tin</string>
+    <string name="matkhau">Mật khẩu:</string>
+    <string name="luu">Lưu</string>
+    <string name="todo">TODO</string>
+</resources>

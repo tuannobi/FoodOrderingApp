@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="164dp"
+            android:layout_height="178dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/user" />
+
+        <TextView
+            android:id="@+id/ho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/ho"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+        <EditText
+            android:id="@+id/editho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:hint="ho"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/ho"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/ten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/ten"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editho"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <EditText
+            android:id="@+id/editten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:hint="ten"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/ten"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/ngaysinh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/ngaysinh"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ho" />
+
+
+        <EditText
+            android:id="@+id/editngsinh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="ngay sinh"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/ngaysinh"
+            app:layout_constraintTop_toBottomOf="@+id/editho" />
+
+        <Button
+            android:id="@+id/btn_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editngsinh"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="SELECT DATE"
+            app:layout_constraintStart_toEndOf="@+id/editngsinh"
+            app:layout_constraintTop_toBottomOf="@+id/ten"
+            tools:ignore="UnknownId" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:textSize="15sp"
+            android:text="@string/email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ngaysinh" />
+
+        <EditText
+            android:id="@+id/editemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="email"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/email"
+            app:layout_constraintTop_toBottomOf="@+id/editngsinh" />
+
+        <TextView
+            android:id="@+id/sdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:textSize="15sp"
+            android:text="@string/sdt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email" />
+
+
+        <EditText
+            android:id="@+id/editsdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:hint="So dien thoai"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/sdt"
+            app:layout_constraintTop_toBottomOf="@+id/editemail" />
+
+        <TextView
+            android:id="@+id/dchi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/dchi"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sdt" />
+
+        <EditText
+            android:id="@+id/editdchi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:hint="Địa chỉ"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/dchi"
+            app:layout_constraintTop_toBottomOf="@+id/editsdt" />
+
+
+        <Button
+            android:id="@+id/btn_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Thay đổi mật khẩu"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dchi" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="72dp"
+            android:text="@string/luu"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dchi" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
