@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".activity.client.mefragment.UpdateThongTin"/>
         <activity android:name=".activity.client.mefragment.UpdatePass" />
+        <activity android:name=".activity.sellingstaff.SellingStaffActivity"
+            android:parentActivityName=".activity.LoginActivity"/>
     </application>
 
 </manifest>

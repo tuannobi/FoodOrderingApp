@@ -9,14 +9,9 @@ import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
 import com.foodorderingapp.activity.admin.customerfragment.CustomerFragement;
-import com.foodorderingapp.activity.admin.orderfragment.OrderFragement;
 import com.foodorderingapp.activity.admin.productfragment.ProductFragement;
 import com.foodorderingapp.activity.admin.promotionfragment.PromotionFragement;
 import com.foodorderingapp.activity.admin.stafffragment.StaffFragement;
-import com.foodorderingapp.activity.client.homefragment.HomeFragement;
-import com.foodorderingapp.activity.client.mefragment.MeFragement;
-import com.foodorderingapp.activity.client.myordersfragment.MyOrdersFragement;
-import com.foodorderingapp.activity.client.shoppingcartfragment.ShoppingCartFragement;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class AdminMainActivity extends AppCompatActivity {
@@ -41,9 +36,6 @@ public class AdminMainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()){
                     case R.id.adminproduct:
                         fragment=new ProductFragement();
-                        break;
-                    case R.id.adminorder:
-                        fragment=new OrderFragement(taiKhoanId);
                         break;
                     case R.id.adminpromotion:
                         fragment=new PromotionFragement();

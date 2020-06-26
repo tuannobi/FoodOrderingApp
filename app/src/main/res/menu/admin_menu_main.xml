@@ -3,9 +3,6 @@
     <item android:id="@+id/adminproduct"
         android:title="Product"
         android:icon="@drawable/ic_home_black_24dp"/>
-    <item android:id="@+id/adminorder"
-        android:title="Orders"
-        android:icon="@drawable/ic_reorder_black_24dp"/>
     <item android:id="@+id/adminpromotion"
         android:title="Promotiont"
         android:icon="@drawable/ic_shopping_cart_black_24dp"/>
