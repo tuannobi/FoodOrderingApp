@@ -1,6 +1,9 @@
 package com.foodorderingapp.model;
 
-public class SanPham {
+import java.io.Serializable;
+
+public class SanPham implements Serializable {
+    private String hinhAnhId;
     private String sanPhamId;
     private String tenSanPham;
     private float giaGoc;
@@ -8,11 +11,11 @@ public class SanPham {
     private float kho;
     private String trangThai;
     private String phanLoaiId;
-
+    private String moTa;
     public SanPham() {
     }
 
-    public SanPham(String sanPhamId, String tenSanPham, float giaGoc, float giaBanLe, float kho, String trangThai, String phanLoaiId) {
+    public SanPham(String sanPhamId, String tenSanPham, float giaGoc, float giaBanLe, float kho, String trangThai, String phanLoaiId,String hinhAnhId,String moTa) {
         this.sanPhamId = sanPhamId;
         this.tenSanPham = tenSanPham;
         this.giaGoc = giaGoc;
@@ -20,6 +23,8 @@ public class SanPham {
         this.kho = kho;
         this.trangThai = trangThai;
         this.phanLoaiId = phanLoaiId;
+        this.hinhAnhId = hinhAnhId;
+        this.moTa = moTa;
     }
 
     public String getSanPhamId() {
@@ -76,5 +81,20 @@ public class SanPham {
 
     public void setPhanLoaiId(String phanLoaiId) {
         this.phanLoaiId = phanLoaiId;
+    }
+
+    public String getHinhAnhId() {
+        return hinhAnhId;
+    }
+
+    public void setMoTa(String moTa) {
+        this.moTa = moTa;
+    }
+    public String getMoTa() {
+        return moTa;
+    }
+
+    public void setHinhAnhId(String hinhAnhId) {
+        this.hinhAnhId = hinhAnhId;
     }
 }
