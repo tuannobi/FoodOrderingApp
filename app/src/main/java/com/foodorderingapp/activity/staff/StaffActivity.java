@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
@@ -43,6 +44,7 @@ public class SellingStaffActivity extends AppCompatActivity {
 
     private ListView listView;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,20 @@ public class SellingStaffActivity extends AppCompatActivity {
         setContentView(R.layout.sellingstaff_main);
 
         listView=findViewById(R.id.sellingstaffList);
+        searchView=findViewById(R.id.search_hoadon);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                Toast.makeText(getApplicationContext(),"change",Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+        });
         db.collection("HoaDon")
                 .whereIn("trangThai",new ArrayList<>(Arrays.asList("Chờ xử lý")))
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {

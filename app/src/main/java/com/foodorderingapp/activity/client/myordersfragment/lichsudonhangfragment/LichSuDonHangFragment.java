@@ -174,7 +174,7 @@ public class LichSuDonHangFragment extends Fragment {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(getContext(), ReviewActivity.class);
+                    Intent intent=new Intent(getContext(), ChiTietDonHangActivity.class);
                     intent.putExtra("khachHangId", hoaDons.get(position).getKhachHangId());
                     intent.putExtra("hoaDonId", hoaDons.get(position).getHoaDonId());
                     startActivity(intent);
