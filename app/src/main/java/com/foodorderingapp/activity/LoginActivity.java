@@ -13,12 +13,11 @@ import android.widget.Toast;
 import com.foodorderingapp.R;
 import com.foodorderingapp.activity.admin.AdminMainActivity;
 import com.foodorderingapp.activity.client.MainActivity;
-import com.foodorderingapp.activity.sellingstaff.SellingStaffActivity;
+import com.foodorderingapp.activity.staff.StaffActivity;
 import com.foodorderingapp.model.TaiKhoan;
 import com.foodorderingapp.model.VaiTro;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -30,8 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText passwordEditText;
     private Button loginButton;
     private static final String CUSTOMER_ROLE="Khách hàng";
-    private static final String SELLINGSTAFF_ROLE="Nhân viên bán hàng";
-    private static final String SHIPPINGSTAFF_ROLE="Nhân viên giao hàng";
+    private static final String STAFF_ROLE="Nhân viên";
     private static final String ADMIN_ROLE="Admin";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,8 +90,8 @@ public class LoginActivity extends AppCompatActivity {
                                                                     startActivity(adminIntent);
                                                                     Toast.makeText(getApplicationContext(),"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
                                                                     break;
-                                                                case SELLINGSTAFF_ROLE:
-                                                                    Intent sellingStaff=new Intent(getApplicationContext(), SellingStaffActivity.class);
+                                                                case STAFF_ROLE:
+                                                                    Intent sellingStaff=new Intent(getApplicationContext(), StaffActivity.class);
                                                                     startActivity(sellingStaff);
                                                                     Toast.makeText(getApplicationContext(),"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
                                                                     break;

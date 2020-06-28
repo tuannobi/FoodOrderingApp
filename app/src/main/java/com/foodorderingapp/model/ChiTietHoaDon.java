@@ -1,29 +1,20 @@
 package com.foodorderingapp.model;
 
 public class ChiTietHoaDon {
-    private String hoaDonId;
     private String sanPhamId;
+    private String tenSanPham;
+    private float gia;
     private int soLuong;
-    private float tienKhuyenMai;
     private float tongTien;
-
     public ChiTietHoaDon() {
     }
 
-    public ChiTietHoaDon(String hoaDonId, String sanPhamId, int soLuong, float tienKhuyenMai, float tongTien) {
-        this.hoaDonId = hoaDonId;
+    public ChiTietHoaDon(String sanPhamId, String tenSanPham, float gia, int soLuong, float tongTien) {
         this.sanPhamId = sanPhamId;
+        this.tenSanPham = tenSanPham;
+        this.gia = gia;
         this.soLuong = soLuong;
-        this.tienKhuyenMai = tienKhuyenMai;
         this.tongTien = tongTien;
-    }
-
-    public String getHoaDonId() {
-        return hoaDonId;
-    }
-
-    public void setHoaDonId(String hoaDonId) {
-        this.hoaDonId = hoaDonId;
     }
 
     public String getSanPhamId() {
@@ -34,20 +25,28 @@ public class ChiTietHoaDon {
         this.sanPhamId = sanPhamId;
     }
 
+    public String getTenSanPham() {
+        return tenSanPham;
+    }
+
+    public void setTenSanPham(String tenSanPham) {
+        this.tenSanPham = tenSanPham;
+    }
+
+    public float getGia() {
+        return gia;
+    }
+
+    public void setGia(float gia) {
+        this.gia = gia;
+    }
+
     public int getSoLuong() {
         return soLuong;
     }
 
     public void setSoLuong(int soLuong) {
         this.soLuong = soLuong;
-    }
-
-    public float getTienKhuyenMai() {
-        return tienKhuyenMai;
-    }
-
-    public void setTienKhuyenMai(float tienKhuyenMai) {
-        this.tienKhuyenMai = tienKhuyenMai;
     }
 
     public float getTongTien() {
