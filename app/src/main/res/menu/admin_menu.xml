@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/product_management"
+            android:title="Sản phẩm"/>
+        <item
+            android:id="@+id/promotion_management"
+            android:title="Khuyến mãi"/>
+        <item
+            android:id="@+id/customer_management"
+            android:title="Khách hàng"/>
+        <item
+            android:id="@+id/order_management"
+            android:title="Đơn hàng"/>
+        <item
+            android:id="@+id/comment_management"
+            android:title="Bình luận"/>
+    </group>
+
+            <item
+                android:title="Profile">
+                <menu>
+                    <group android:checkableBehavior="single">
+                        <item
+                            android:id="@+id/nav_profile"
+                            android:title="Thông tin"/>
+                        <item
+                            android:id="@+id/nav_logouot"
+                            android:title="Đăng xuất"/>
+                    </group>
+
+                </menu>
+            </item>
+
+</menu>

@@ -8,10 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
-import com.foodorderingapp.activity.admin.customerfragment.CustomerFragement;
-import com.foodorderingapp.activity.admin.productfragment.ProductFragement;
-import com.foodorderingapp.activity.admin.promotionfragment.PromotionFragement;
-import com.foodorderingapp.activity.admin.stafffragment.StaffFragement;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ChiTietDonHangActivity extends AppCompatActivity {
