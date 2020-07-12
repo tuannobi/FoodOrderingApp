@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/thucuong"
+        android:icon="@drawable/drink_icon"
+        android:title="Cà phê"/>
+    <item
+        android:id="@+id/doan"
+        android:icon="@drawable/food_icon"
+        android:title="Bánh"/>
+</menu>

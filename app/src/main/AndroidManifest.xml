@@ -27,9 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.client.homefragment.ItemFragment"/>
         <activity android:name=".activity.client.mefragment.UpdateThongTin"/>
         <activity android:name=".activity.client.mefragment.UpdatePass" />
-        <activity android:name=".activity.sellingstaff.SellingStaffActivity"
+        <activity android:name=".activity.staff.StaffActivity"
             android:parentActivityName=".activity.LoginActivity"/>
         <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ChiTietDonHangActivity"/>
     </application>

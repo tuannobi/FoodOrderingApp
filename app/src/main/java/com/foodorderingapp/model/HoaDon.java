@@ -1,45 +1,43 @@
 package com.foodorderingapp.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class HoaDon {
     private String hoaDonId;
+    public List<ChiTietHoaDon> chiTietHoaDon;
     private Date ngayTao;
-    private String phuongThucThanhToan;
     private Date ngayGiao;
-    private String soNha;
+    private float phiShip;
     private String quan;
-    private String phiShipId;
+    private String soNha;
     private float tongTienThanhToan;
-    private String tinNhan;
+    private float tienKhuyenMai;
+    private String maKhuyenMai;
     private String trangThai;
-    private String khachHangId;
-    private String nhanVienBanHangId;
-    private String nhanVienGiaoHangId;
+    private String taiKhoanId;
     private Date thoiGianDatHang;
     private Date thoiGianChoGiaoHang;
     private Date thoiGianDangGiaoHang;
     private Date thoiGianGiaoHangThanhCong;
     private Date thoiGianHuy;
-    private int danhGia;
 
     public HoaDon() {
     }
 
-    public HoaDon(String hoaDonId, Date ngayTao, String phuongThucThanhToan, Date ngayGiao, String soNha, String quan, String phiShipId, float tongTienThanhToan, String tinNhan, String trangThai, String khachHangId, String nhanVienBanHangId, String nhanVienGiaoHangId, Date thoiGianDatHang, Date thoiGianChoGiaoHang, Date thoiGianDangGiaoHang, Date thoiGianGiaoHangThanhCong, Date thoiGianHuy) {
+    public HoaDon(String hoaDonId, List<ChiTietHoaDon> chiTietHoaDon, Date ngayTao, Date ngayGiao, float phiShip, String quan, String soNha, float tongTienThanhToan, float tienKhuyenMai, String maKhuyenMai, String trangThai, String taiKhoanId, Date thoiGianDatHang, Date thoiGianChoGiaoHang, Date thoiGianDangGiaoHang, Date thoiGianGiaoHangThanhCong, Date thoiGianHuy) {
         this.hoaDonId = hoaDonId;
+        this.chiTietHoaDon = chiTietHoaDon;
         this.ngayTao = ngayTao;
-        this.phuongThucThanhToan = phuongThucThanhToan;
         this.ngayGiao = ngayGiao;
-        this.soNha = soNha;
+        this.phiShip = phiShip;
         this.quan = quan;
-        this.phiShipId = phiShipId;
+        this.soNha = soNha;
         this.tongTienThanhToan = tongTienThanhToan;
-        this.tinNhan = tinNhan;
+        this.tienKhuyenMai = tienKhuyenMai;
+        this.maKhuyenMai = maKhuyenMai;
         this.trangThai = trangThai;
-        this.khachHangId = khachHangId;
-        this.nhanVienBanHangId = nhanVienBanHangId;
-        this.nhanVienGiaoHangId = nhanVienGiaoHangId;
+        this.taiKhoanId = taiKhoanId;
         this.thoiGianDatHang = thoiGianDatHang;
         this.thoiGianChoGiaoHang = thoiGianChoGiaoHang;
         this.thoiGianDangGiaoHang = thoiGianDangGiaoHang;
@@ -55,20 +53,20 @@ public class HoaDon {
         this.hoaDonId = hoaDonId;
     }
 
+    public List<ChiTietHoaDon> getChiTietHoaDon() {
+        return chiTietHoaDon;
+    }
+
+    public void setChiTietHoaDon(List<ChiTietHoaDon> chiTietHoaDon) {
+        this.chiTietHoaDon = chiTietHoaDon;
+    }
+
     public Date getNgayTao() {
         return ngayTao;
     }
 
     public void setNgayTao(Date ngayTao) {
         this.ngayTao = ngayTao;
-    }
-
-    public String getPhuongThucThanhToan() {
-        return phuongThucThanhToan;
-    }
-
-    public void setPhuongThucThanhToan(String phuongThucThanhToan) {
-        this.phuongThucThanhToan = phuongThucThanhToan;
     }
 
     public Date getNgayGiao() {
@@ -79,12 +77,12 @@ public class HoaDon {
         this.ngayGiao = ngayGiao;
     }
 
-    public String getSoNha() {
-        return soNha;
+    public float getPhiShip() {
+        return phiShip;
     }
 
-    public void setSoNha(String soNha) {
-        this.soNha = soNha;
+    public void setPhiShip(float phiShip) {
+        this.phiShip = phiShip;
     }
 
     public String getQuan() {
@@ -95,12 +93,12 @@ public class HoaDon {
         this.quan = quan;
     }
 
-    public String getPhiShipId() {
-        return phiShipId;
+    public String getSoNha() {
+        return soNha;
     }
 
-    public void setPhiShipId(String phiShipId) {
-        this.phiShipId = phiShipId;
+    public void setSoNha(String soNha) {
+        this.soNha = soNha;
     }
 
     public float getTongTienThanhToan() {
@@ -111,12 +109,20 @@ public class HoaDon {
         this.tongTienThanhToan = tongTienThanhToan;
     }
 
-    public String getTinNhan() {
-        return tinNhan;
+    public float getTienKhuyenMai() {
+        return tienKhuyenMai;
     }
 
-    public void setTinNhan(String tinNhan) {
-        this.tinNhan = tinNhan;
+    public void setTienKhuyenMai(float tienKhuyenMai) {
+        this.tienKhuyenMai = tienKhuyenMai;
+    }
+
+    public String getMaKhuyenMai() {
+        return maKhuyenMai;
+    }
+
+    public void setMaKhuyenMai(String maKhuyenMai) {
+        this.maKhuyenMai = maKhuyenMai;
     }
 
     public String getTrangThai() {
@@ -127,28 +133,12 @@ public class HoaDon {
         this.trangThai = trangThai;
     }
 
-    public String getKhachHangId() {
-        return khachHangId;
+    public String getTaiKhoanId() {
+        return taiKhoanId;
     }
 
-    public void setKhachHangId(String khachHangId) {
-        this.khachHangId = khachHangId;
-    }
-
-    public String getNhanVienBanHangId() {
-        return nhanVienBanHangId;
-    }
-
-    public void setNhanVienBanHangId(String nhanVienBanHangId) {
-        this.nhanVienBanHangId = nhanVienBanHangId;
-    }
-
-    public String getNhanVienGiaoHangId() {
-        return nhanVienGiaoHangId;
-    }
-
-    public void setNhanVienGiaoHangId(String nhanVienGiaoHangId) {
-        this.nhanVienGiaoHangId = nhanVienGiaoHangId;
+    public void setTaiKhoanId(String taiKhoanId) {
+        this.taiKhoanId = taiKhoanId;
     }
 
     public Date getThoiGianDatHang() {
@@ -189,37 +179,5 @@ public class HoaDon {
 
     public void setThoiGianHuy(Date thoiGianHuy) {
         this.thoiGianHuy = thoiGianHuy;
-    }
-
-    @Override
-    public String toString() {
-        return "HoaDon{" +
-                "hoaDonId='" + hoaDonId + '\'' +
-                ", ngayTao=" + ngayTao +
-                ", phuongThucThanhToan='" + phuongThucThanhToan + '\'' +
-                ", ngayGiao=" + ngayGiao +
-                ", soNha='" + soNha + '\'' +
-                ", quan='" + quan + '\'' +
-                ", phiShipId='" + phiShipId + '\'' +
-                ", tongTienThanhToan=" + tongTienThanhToan +
-                ", tinNhan='" + tinNhan + '\'' +
-                ", trangThai='" + trangThai + '\'' +
-                ", khachHangId='" + khachHangId + '\'' +
-                ", nhanVienBanHangId='" + nhanVienBanHangId + '\'' +
-                ", nhanVienGiaoHangId='" + nhanVienGiaoHangId + '\'' +
-                ", thoiGianDatHang=" + thoiGianDatHang +
-                ", thoiGianChoGiaoHang=" + thoiGianChoGiaoHang +
-                ", thoiGianDangGiaoHang=" + thoiGianDangGiaoHang +
-                ", thoiGianGiaoHangThanhCong=" + thoiGianGiaoHangThanhCong +
-                ", thoiGianHuy=" + thoiGianHuy +
-                '}';
-    }
-
-    public int getDanhGia() {
-        return danhGia;
-    }
-
-    public void setDanhGia(int danhGia) {
-        this.danhGia = danhGia;
     }
 }

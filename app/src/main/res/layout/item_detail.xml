@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFF"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="#FFF"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/a1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_margin="10dp"
+                android:id="@+id/hinhanhdialog"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                />
+            <RelativeLayout
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@+id/hinhanhdialog"
+                android:layout_width="180dp"
+                android:layout_height="180dp">
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/tensp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="Cafe sua da"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/tensp"
+                    android:id="@+id/gia"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="10.000d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/gia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="Yêu thích"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/a1"
+            android:id="@+id/a2"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+            <TextView
+                android:id="@+id/gioithieu"
+                android:background="#F8EFEF"
+                android:textSize="20sp"
+                android:text="Giới thiệu"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_margin="5dp"
+                android:id="@+id/loigioithieu"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/gioithieu"
+                android:textSize="15sp"
+                android:text="Gioi thieuaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <RelativeLayout
+                android:layout_below="@id/loigioithieu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageButton
+                    android:background="#FFF"
+                    android:onClick="bamNutSubtract"
+                    android:src="@drawable/minuss"
+                    android:id="@+id/subtractt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/soluong"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/subtractt"
+                    android:textSize="15sp"
+                    android:text="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageButton
+                    android:background="#FFF"
+                    android:layout_toRightOf="@id/soluong"
+                    android:onClick="bamNutAdd"
+                    android:src="@drawable/plus"
+                    android:id="@+id/addd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="20dp" />
+                <Button
+                    android:layout_toRightOf="@id/addd"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/mua"
+                    android:background="#EA8025"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:text="29.000d"
+                    android:layout_marginLeft="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginBottom="200dp"
+            android:layout_below="@+id/a2"
+            android:id="@+id/a3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/danhgia"
+                android:background="#F8EFEF"
+                android:textSize="20sp"
+                android:text="Đánh giá"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <ListView
+                android:id="@+id/list_danhgia"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@+id/danhgia"
+                android:layout_alignParentBottom="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="8dp"
+                />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</ScrollView>

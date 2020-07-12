@@ -8,23 +8,23 @@ public class SanPham implements Serializable {
     private String tenSanPham;
     private float giaGoc;
     private float giaBanLe;
-    private float kho;
     private String trangThai;
     private String phanLoaiId;
     private String moTa;
+    private float doanhThu;
     public SanPham() {
     }
 
-    public SanPham(String sanPhamId, String tenSanPham, float giaGoc, float giaBanLe, float kho, String trangThai, String phanLoaiId,String hinhAnhId,String moTa) {
+    public SanPham(String sanPhamId, String tenSanPham, float giaGoc, float giaBanLe, String trangThai, String phanLoaiId,String hinhAnhId,String moTa,float doanhThu) {
         this.sanPhamId = sanPhamId;
         this.tenSanPham = tenSanPham;
         this.giaGoc = giaGoc;
         this.giaBanLe = giaBanLe;
-        this.kho = kho;
         this.trangThai = trangThai;
         this.phanLoaiId = phanLoaiId;
         this.hinhAnhId = hinhAnhId;
         this.moTa = moTa;
+        this.doanhThu = doanhThu;
     }
 
     public String getSanPhamId() {
@@ -59,13 +59,7 @@ public class SanPham implements Serializable {
         this.giaBanLe = giaBanLe;
     }
 
-    public float getKho() {
-        return kho;
-    }
 
-    public void setKho(float kho) {
-        this.kho = kho;
-    }
 
     public String getTrangThai() {
         return trangThai;
@@ -96,5 +90,13 @@ public class SanPham implements Serializable {
 
     public void setHinhAnhId(String hinhAnhId) {
         this.hinhAnhId = hinhAnhId;
+    }
+
+    public float getDoanhThu() {
+        return doanhThu;
+    }
+
+    public void setDoanhThu(float doanhThu) {
+        this.doanhThu = doanhThu;
     }
 }

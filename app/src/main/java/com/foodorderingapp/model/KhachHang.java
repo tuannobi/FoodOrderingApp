@@ -3,36 +3,38 @@ package com.foodorderingapp.model;
 import java.util.Date;
 
 public class KhachHang {
-    private String khachHangId;
     private String ho;
     private String ten;
     private Date ngaySinh;
     private String email;
-    private String SDT;
+    private String sdt;
     private String diaChi;
     private String taiKhoanId;
+    private float doanhThu;
 
     public KhachHang() {
     }
 
-    public KhachHang(String khachHangId, String ho, String ten, Date ngaySinh, String email, String SDT, String diaChi, String taiKhoanId) {
-        this.khachHangId = khachHangId;
+    public KhachHang( String ho, String ten, Date ngaySinh, String email, String SDT, String diaChi, String taiKhoanId,float doanhThu) {
+
         this.ho = ho;
         this.ten = ten;
         this.ngaySinh = ngaySinh;
         this.email = email;
-        this.SDT = SDT;
+        this.sdt = SDT;
         this.diaChi = diaChi;
         this.taiKhoanId = taiKhoanId;
+        this.doanhThu = doanhThu;
     }
 
-    public String getKhachHangId() {
-        return khachHangId;
+    public float getDoanhThu() {
+        return doanhThu;
     }
 
-    public void setKhachHangId(String khachHangId) {
-        this.khachHangId = khachHangId;
+    public void setDoanhThu(float doanhThu) {
+        this.doanhThu = doanhThu;
     }
+
 
     public String getHo() {
         return ho;
@@ -67,11 +69,11 @@ public class KhachHang {
     }
 
     public String getSDT() {
-        return SDT;
+        return sdt;
     }
 
     public void setSDT(String SDT) {
-        this.SDT = SDT;
+        this.sdt = SDT;
     }
 
     public String getDiaChi() {
@@ -93,12 +95,11 @@ public class KhachHang {
     @Override
     public String toString() {
         return "KhachHang{" +
-                "khachHangId='" + khachHangId + '\'' +
                 ", ho='" + ho + '\'' +
                 ", ten='" + ten + '\'' +
                 ", ngaySinh=" + ngaySinh +
                 ", email='" + email + '\'' +
-                ", SDT='" + SDT + '\'' +
+                ", SDT='" + sdt + '\'' +
                 ", diaChi='" + diaChi + '\'' +
                 ", taiKhoanId='" + taiKhoanId + '\'' +
                 '}';

@@ -33,10 +33,10 @@ public class DialogItem extends DialogFragment {
 
     public static DialogItem newInstance() {
         DialogItem dialogItem = new DialogItem();
-        SanPham sanPham = new SanPham(null,"a",1,2,3,"Có","Coffe","https://firebasestorage.googleapis.com/v0/b/foodorderingapp-85e14.appspot.com/o/images%2F5c8a4233-c294-4bb8-bd50-f32736f42f01?alt=media&token=0f6e79aa-d821-4afe-8f06-451a9b9b27c1","abc");
-        Bundle args = new Bundle();
-        args.putParcelable("sanpham", (Parcelable) sanPham);
-        dialogItem.setArguments(args);
+//        SanPham sanPham = new SanPham(null,"a",1,2,3,"Có","Coffe","https://firebasestorage.googleapis.com/v0/b/foodorderingapp-85e14.appspot.com/o/images%2F5c8a4233-c294-4bb8-bd50-f32736f42f01?alt=media&token=0f6e79aa-d821-4afe-8f06-451a9b9b27c1","abc");
+//        Bundle args = new Bundle();
+//        args.putParcelable("sanpham", (Parcelable) sanPham);
+//        dialogItem.setArguments(args);
         return dialogItem;
     }
 

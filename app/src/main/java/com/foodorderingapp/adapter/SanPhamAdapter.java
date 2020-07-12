@@ -56,7 +56,7 @@ public class SanPhamAdapter extends BaseAdapter {
                 ArrayList<SanPham> filters =  new ArrayList<SanPham>();
                 for(int i=0;i<tempList.size();i++){
                     if(tempList.get(i).getTenSanPham().toUpperCase().contains(constraint)){
-                        SanPham sanPham = new SanPham(tempList.get(i).getSanPhamId(),tempList.get(i).getTenSanPham(),tempList.get(i).getGiaGoc(),tempList.get(i).getGiaBanLe(),tempList.get(i).getKho(),tempList.get(i).getTrangThai(),tempList.get(i).getPhanLoaiId(),tempList.get(i).getHinhAnhId(),tempList.get(i).getMoTa());
+                        SanPham sanPham = new SanPham(tempList.get(i).getSanPhamId(),tempList.get(i).getTenSanPham(),tempList.get(i).getGiaGoc(),tempList.get(i).getGiaBanLe(),tempList.get(i).getTrangThai(),tempList.get(i).getPhanLoaiId(),tempList.get(i).getHinhAnhId(),tempList.get(i).getMoTa(),tempList.get(i).getDoanhThu());
                         filters.add(sanPham);
                     }
                 }

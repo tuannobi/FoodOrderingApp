@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -18,17 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
-import com.foodorderingapp.activity.admin.customerfragment.CustomerFragement;
-import com.foodorderingapp.activity.admin.productfragment.ProductFragement;
-import com.foodorderingapp.activity.admin.promotionfragment.PromotionFragement;
-import com.foodorderingapp.activity.admin.stafffragment.StaffFragement;
 import com.foodorderingapp.model.HoaDon;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -40,7 +33,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SellingStaffActivity extends AppCompatActivity {
+public class StaffActivity extends AppCompatActivity {
 
     private ListView listView;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -81,7 +74,7 @@ public class SellingStaffActivity extends AppCompatActivity {
                         for (QueryDocumentSnapshot doc : value) {
                             hoaDons.add(doc.toObject(HoaDon.class));
                         }
-                        SellingStaffActivity.MyAdapter myAdapter=new SellingStaffActivity.MyAdapter(getApplicationContext(),hoaDons);
+                        com.foodorderingapp.activity.sellingstaff.StaffActivity.MyAdapter myAdapter=new com.foodorderingapp.activity.sellingstaff.StaffActivity.MyAdapter(getApplicationContext(),hoaDons);
                         System.out.println(hoaDons.toString());
                         listView.setAdapter(myAdapter);
                     }

@@ -9,8 +9,8 @@ import android.view.MenuItem;
 
 import com.foodorderingapp.R;
 import com.foodorderingapp.activity.client.homefragment.HomeFragement;
-import com.foodorderingapp.activity.client.mefragment.MeFragement;
-import com.foodorderingapp.activity.client.myordersfragment.MyOrdersFragement;
+//import com.foodorderingapp.activity.client.mefragment.MeFragement;
+//import com.foodorderingapp.activity.client.myordersfragment.MyOrdersFragement;
 import com.foodorderingapp.activity.client.shoppingcartfragment.ShoppingCartFragement;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -24,27 +24,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigationView=findViewById(R.id.buttonNav);
+        final String taiKhoanId= getIntent().getSerializableExtra("taiKhoanId").toString();
         if(savedInstanceState==null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,new HomeFragement()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,new HomeFragement(taiKhoanId)).commit();
         }
         //get Object- value from Intent
-        final String taiKhoanId= getIntent().getSerializableExtra("taiKhoanId").toString();
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 Fragment fragment=null;
                 switch (menuItem.getItemId()){
                     case R.id.myhome:
-                        fragment=new HomeFragement();
+                        fragment=new HomeFragement(taiKhoanId);
                         break;
-                    case R.id.myorders:
-                        fragment=new MyOrdersFragement(taiKhoanId);
-                        break;
+//                    case R.id.myorders:
+//                        fragment=new MyOrdersFragement(taiKhoanId);
+//                        break;
                     case R.id.shoppingcart:
                         fragment=new ShoppingCartFragement(taiKhoanId);
                         break;
                     case R.id.me:
-                        fragment=new MeFragement(taiKhoanId);
+//                        fragment=new MeFragement(taiKhoanId);
                         System.out.println("Tạo mới home Fragment");
                         break;
 

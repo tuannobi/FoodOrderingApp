@@ -13,12 +13,10 @@ import android.widget.Toast;
 import com.foodorderingapp.R;
 import com.foodorderingapp.activity.admin.AdminMainActivity;
 import com.foodorderingapp.activity.client.MainActivity;
-import com.foodorderingapp.activity.sellingstaff.SellingStaffActivity;
 import com.foodorderingapp.model.TaiKhoan;
 import com.foodorderingapp.model.VaiTro;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -93,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                                                                     Toast.makeText(getApplicationContext(),"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
                                                                     break;
                                                                 case SELLINGSTAFF_ROLE:
-                                                                    Intent sellingStaff=new Intent(getApplicationContext(), SellingStaffActivity.class);
+                                                                    Intent sellingStaff=new Intent(getApplicationContext(), com.foodorderingapp.activity.sellingstaff.StaffActivity.class);
                                                                     startActivity(sellingStaff);
                                                                     Toast.makeText(getApplicationContext(),"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
                                                                     break;
