@@ -330,4 +330,7 @@ public class ItemFragment extends AppCompatActivity {
             return row;
         }
     }
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

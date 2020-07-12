@@ -70,6 +70,7 @@ public class FoodFragment extends Fragment {
                         for (DocumentSnapshot doc : queryDocumentSnapshots) {
                             arraySanPham.add(doc.toObject(SanPham.class));
                         }
+                        adapter =  new SanPhamAdapter1(view.getContext(),arraySanPham);
                         gridView.setAdapter(adapter);
                     }
                 });
@@ -109,7 +110,7 @@ public class FoodFragment extends Fragment {
         searchView = (SearchView)view.findViewById(R.id.searchview1);
         arraySanPham = new ArrayList<SanPham>();
         gridView = (GridView) view.findViewById(R.id.gridview1);
-        adapter =  new SanPhamAdapter1(getContext(),arraySanPham);
+
     }
 
     class SanPhamAdapter1 extends ArrayAdapter<SanPham> {
