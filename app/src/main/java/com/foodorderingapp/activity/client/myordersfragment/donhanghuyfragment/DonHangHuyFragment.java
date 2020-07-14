@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
 import com.foodorderingapp.model.HoaDon;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -25,6 +26,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DonHangHuyFragment extends Fragment {
@@ -46,44 +48,34 @@ public class DonHangHuyFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         listView=view.findViewById(R.id.huyListView);
         //
-        db.collection("KhachHang")
-                .whereEqualTo("taiKhoanId", taiKhoanId)
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+        db.collection("HoaDon")
+                .whereIn("trangThai",new ArrayList<>(Arrays.asList("Đơn hàng hủy")))
+                .whereEqualTo("taiKhoanId",taiKhoanId)
+                .addSnapshotListener( new EventListener<QuerySnapshot>() {
                     @Override
-                    public void onEvent(@Nullable QuerySnapshot value,
-                                        @Nullable FirebaseFirestoreException e) {
-                        if (e != null) {
-                            Log.w("TAG", "Listen failed.", e);
+                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                        if (e!=null){
                             return;
                         }
-
-                        for (QueryDocumentSnapshot doc : value) {
-                            if (doc.get("khachHangId") != null) {
-                                String khachHangId= (String) doc.get("khachHangId");
-                                //
-                                db.collection("HoaDon")
-                                        .whereEqualTo("trangThai","Đã hủy")
-                                        .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                                            @Override
-                                            public void onEvent(@Nullable QuerySnapshot value,
-                                                                @Nullable FirebaseFirestoreException e) {
-                                                if (e != null) {
-                                                    Log.w("TAG", "Listen failed.", e);
-                                                    return;
-                                                }
-
-                                                List<HoaDon> hoaDons = new ArrayList<>();
-                                                for (QueryDocumentSnapshot doc : value) {
-                                                    hoaDons.add(doc.toObject(HoaDon.class));
-                                                }
-                                                MyAdapter myAdapter=new MyAdapter(getContext(),hoaDons);
-                                                System.out.println(hoaDons.toString());
-                                                listView.setAdapter(myAdapter);
-                                            }
-                                        });
-                                //
+                        List<HoaDon> hoaDons = new ArrayList<>();
+                        if (queryDocumentSnapshots != null) {
+                            if(queryDocumentSnapshots.getDocuments().size()>0) {
+                                for (DocumentSnapshot doc : queryDocumentSnapshots) {
+                                    hoaDons.add(doc.toObject(HoaDon.class));
+                                }
+                                System.out.println("Số hóa đơn hủy"+hoaDons.size());
+                                if(hoaDons!=null){
+                                    MyAdapter myAdapter=new MyAdapter(getContext(),hoaDons);
+                                    listView.setAdapter(myAdapter);
+                                }
                             }
+
+
+
+                        } else{
+                            Log.d("TAG", "Current data: null");
                         }
+
                     }
                 });
 
