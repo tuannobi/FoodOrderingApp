@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:background="#FFF"
+    android:padding="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="THÊM SẢN PHẨM"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#FB8C00"/>
+    <EditText
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:id="@+id/tensanpham"
+        android:hint="Tên sản phẩm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/giagoc"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Giá gốc"/>
+    <EditText
+        android:id="@+id/giabanle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Giá bán lẻ"/>
+    <EditText
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:id="@+id/mota"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="Mô tả"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8EFEF"
+            android:gravity="center"
+            android:text="Phân loại"
+            android:textSize="17dp" />
+
+        <RadioGroup
+        android:id="@+id/phanloai"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:layout_marginLeft="50dp"
+            android:checked="true"
+            android:id="@+id/phanloaicafe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cà phê"/>
+
+            <RadioButton
+                android:id="@+id/phanloaitrasua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="Thức ăn" />
+    </RadioGroup>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:background="#FB8C00"
+            android:padding="10dp"
+            android:id="@+id/chonhinhanh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn hình ảnh"
+            />
+        <Button
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFF"
+            android:background="#FB8C00"
+            android:layout_below="@id/chonhinhanh"
+            android:id="@+id/themsanpham"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm sản phẩm"
+            />
+
+        <ImageView
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/hinhanh"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="35dp"
+            android:layout_toRightOf="@id/chonhinhanh" />
+    </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

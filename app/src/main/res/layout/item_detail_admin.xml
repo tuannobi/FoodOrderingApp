@@ -1,0 +1,219 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFF"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/a11"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+            <ImageView
+                android:layout_margin="10dp"
+                android:id="@+id/hinhanhdialog_admin"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                />
+            <RelativeLayout
+                android:layout_margin="7dp"
+                android:layout_toRightOf="@+id/hinhanhdialog_admin"
+                android:layout_width="180dp"
+                android:layout_height="185dp">
+                <EditText
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tensp_admin"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Cafe sua da"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginTop="13dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:id="@+id/giabanle"
+                    android:layout_below="@+id/tensp_admin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Giá bán lẻ:"/>
+                <EditText
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/giabanle"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/tensp_admin"
+                    android:id="@+id/giabanle_admin"
+
+                    android:textSize="18sp"
+                    android:text="10.000d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+
+                    android:id="@+id/giagoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/giabanle"
+                    android:layout_marginTop="19dp"
+                    android:text="Giá gốc:"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_marginLeft="22dp"
+                    android:id="@+id/giagoc_admin"
+                    android:layout_toRightOf="@+id/giagoc"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/giabanle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10000đ"/>
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:id="@+id/doanhthudoanhthu"
+                    android:layout_below="@+id/giagoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doanh thu: "/>
+                <TextView
+                    android:textSize="18sp"
+                    android:id="@+id/doanhthu_admin"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/doanhthudoanhthu"
+                    android:layout_marginTop="13dp"
+                    android:layout_below="@id/giagoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10000đ"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@+id/a11"
+        android:id="@+id/a22"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/gioithieu"
+            android:background="#F8EFEF"
+            android:textSize="20sp"
+            android:text="Mô tả"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_margin="5dp"
+            android:id="@+id/loigioithieu_admin"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/gioithieu"
+            android:textSize="15sp"
+            android:text="Gioi thieuaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textStyle="bold"
+            android:layout_below="@id/loigioithieu_admin"
+            android:id="@+id/phanloaiid"
+            android:textSize="20sp"
+            android:text="Phân loại"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioGroup
+            android:layout_toRightOf="@+id/phanloaiid"
+            android:layout_below="@id/loigioithieu_admin"
+            android:id="@+id/phanloaiphanloai"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:layout_marginLeft="30dp"
+                android:checked="true"
+                android:id="@+id/phanloaithucuong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thức uống"/>
+
+            <RadioButton
+                android:id="@+id/phanloaithucan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="Thức ăn" />
+        </RadioGroup>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@id/phanloaiphanloai"
+            android:id="@+id/trangthai"
+            android:textSize="20sp"
+            android:text="Trạng thái"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioGroup
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/phanloaiphanloai"
+            android:layout_toRightOf="@id/trangthai"
+            android:id="@+id/trangthaitrangthai"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:layout_marginLeft="20dp"
+                android:checked="true"
+                android:id="@+id/trangthaico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Còn"/>
+
+            <RadioButton
+                android:id="@+id/trangthaikhong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="85dp"
+                android:text="Hết" />
+        </RadioGroup>
+        <Button
+            android:background="#FB8C00"
+            android:textColor="#FFF"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="210dp"
+            android:layout_below="@+id/trangthai"
+            android:textAllCaps="false"
+            android:id="@+id/nutsua"
+            android:text="Sửa thông tin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+        <TextView
+            android:layout_below="@+id/a22"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/a33"
+            android:background="#F8EFEF"
+            android:textSize="20sp"
+            android:text="Đánh giá"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <ListView
+        android:id="@+id/list_danhgia_admin"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/a33"
+        android:layout_alignParentBottom="false"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="8dp"
+            />
+    </RelativeLayout>
+</ScrollView>

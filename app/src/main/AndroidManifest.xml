@@ -23,7 +23,7 @@
         <!-- <activity -->
         <!-- android:name=".activity.client.myordersfragment.MyOrdersFragment" -->
         <!-- android:parentActivityName=".activity.client.MainActivity" /> -->
-        <activity android:name=".activity.admin.AdminMainActivity">
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,8 +34,8 @@
         <activity android:name=".activity.client.homefragment.ItemFragment"/>
         <activity android:name=".activity.client.mefragment.UpdateThongTin"/>
         <activity android:name=".activity.client.mefragment.UpdatePass" />
-        <activity android:name=".activity.staff.StaffActivity"
-            android:parentActivityName=".activity.LoginActivity"/>
+<!--        <activity android:name=".activity.staff.StaffActivity"-->
+<!--            android:parentActivityName=".activity.LoginActivity"/>-->
         <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ChiTietDonHangActivity"/>
     </application>
 
