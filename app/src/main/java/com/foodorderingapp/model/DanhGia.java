@@ -4,17 +4,17 @@ public class DanhGia {
     private String danhGiaId;
     private int hangMuc;
     private String nhanXet;
-    private String hoaDonId;
+    private String sanPhamId;
     private String khachHangId;
 
     public DanhGia() {
     }
 
-    public DanhGia(String danhGiaId, int hangMuc, String nhanXet, String hoaDonId, String khachHangId) {
+    public DanhGia(String danhGiaId, int hangMuc, String nhanXet, String sanPhamId, String khachHangId) {
         this.danhGiaId = danhGiaId;
         this.hangMuc = hangMuc;
         this.nhanXet = nhanXet;
-        this.hoaDonId = hoaDonId;
+        this.sanPhamId = sanPhamId;
         this.khachHangId = khachHangId;
     }
 
@@ -42,12 +42,12 @@ public class DanhGia {
         this.nhanXet = nhanXet;
     }
 
-    public String getHoaDonId() {
-        return hoaDonId;
+    public String getSanPhamId() {
+        return sanPhamId;
     }
 
-    public void setHoaDonId(String hoaDonId) {
-        this.hoaDonId = hoaDonId;
+    public void setSanPhamId(String sanPhamId) {
+        this.sanPhamId = sanPhamId;
     }
 
     public String getKhachHangId() {

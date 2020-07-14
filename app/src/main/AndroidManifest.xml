@@ -27,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.admin.productfragment.ItemDetail"/>
         <activity android:name=".activity.client.homefragment.ItemFragment"/>
         <activity android:name=".activity.client.mefragment.UpdateThongTin"/>
         <activity android:name=".activity.client.mefragment.UpdatePass" />
