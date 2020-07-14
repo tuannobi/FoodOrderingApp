@@ -16,6 +16,9 @@
         <item
             android:id="@+id/comment_management"
             android:title="Bình luận"/>
+        <item
+            android:id="@+id/order_static_management"
+            android:title="Doanh thu theo hóa đơn"/>
     </group>
 
             <item
