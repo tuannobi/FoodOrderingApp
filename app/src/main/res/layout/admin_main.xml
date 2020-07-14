@@ -16,36 +16,38 @@
         app:headerLayout="@layout/admin_header"
         app:menu="@menu/admin_menu"
         android:layout_gravity="start"/>
-    
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimaryDark"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:navigationIcon="@drawable/icon_add"/>
+                app:navigationIcon="@drawable/icon_add" />
 
-            <TextView
+            <FrameLayout
+                android:id="@+id/fragmentContainer1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Hello slafkjlds"/>
+                android:layout_height="669dp" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </LinearLayout>
 
     </ScrollView>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

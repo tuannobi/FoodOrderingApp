@@ -17,6 +17,8 @@ import com.foodorderingapp.model.TaiKhoan;
 import com.foodorderingapp.model.VaiTro;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -77,23 +79,26 @@ public class LoginActivity extends AppCompatActivity {
                                                             }
                                                             switch (vaiTro.getMoTa()){
                                                                 case CUSTOMER_ROLE:
-                                                                    Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+                                                                    Intent intent=new Intent(LoginActivity.this, MainActivity.class);
                                                                     intent.putExtra("taiKhoanId", finalTaiKhoan.getTaiKhoanId());
+                                                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                                                     startActivity(intent);
-                                                                    Toast.makeText(getApplicationContext(),"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(LoginActivity.this,"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
                                                                     break;
 //                                                                case SHIPPINGSTAFF_ROLE:
 //                                                                    break;
                                                                 case ADMIN_ROLE:
-                                                                    Intent adminIntent=new Intent(getApplicationContext(), AdminMainActivity.class);
+                                                                    Intent adminIntent=new Intent(LoginActivity.this, AdminMainActivity.class);
                                                                     adminIntent.putExtra("taiKhoanId", finalTaiKhoan.getTaiKhoanId());
+                                                                    adminIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                                                     startActivity(adminIntent);
-                                                                    Toast.makeText(getApplicationContext(),"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(LoginActivity.this,"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
                                                                     break;
                                                                 case SELLINGSTAFF_ROLE:
-                                                                    Intent sellingStaff=new Intent(getApplicationContext(), com.foodorderingapp.activity.sellingstaff.StaffActivity.class);
+                                                                    Intent sellingStaff=new Intent(LoginActivity.this, com.foodorderingapp.activity.sellingstaff.StaffActivity.class);
+
                                                                     startActivity(sellingStaff);
-                                                                    Toast.makeText(getApplicationContext(),"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(LoginActivity.this,"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
                                                                     break;
                                                             }
                                                         }
@@ -106,5 +111,23 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    FirebaseUser firebaseUser;
+    protected void onStart() {
+        super.onStart();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if(firebaseUser !=null)
+        {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        if (getIntent().getExtras() != null) {
 
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            intent.putExtras(getIntent().getExtras());
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        }
+    }
 }

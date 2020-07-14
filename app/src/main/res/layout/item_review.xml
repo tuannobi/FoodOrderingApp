@@ -9,21 +9,40 @@
     android:orientation="vertical"
     android:background="#FFFFFF"
     >
+
     <TextView
+
         android:id="@+id/textview_tensanpham"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:padding="15dp"
         android:text="Cafe sua da"
         android:textColor="#f000"
         android:textSize="15sp" />
+
     <TextView
         android:id="@+id/textview_tenkhachang"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:padding="15dp"
         android:text="Cafe sua da"
         android:textColor="#f000"
         android:textSize="15sp" />
+
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:keepScreenOn="true"
+        android:numStars="5"
+        android:saveEnabled="true" />
+    <TextView
+        android:layout_below="@+id/rating"
+        android:id="@+id/getRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Rating "
+        android:textColor="#f000"/>
 </LinearLayout>
 

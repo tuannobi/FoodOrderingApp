@@ -11,16 +11,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
 import com.foodorderingapp.activity.admin.commentfragment.CommentMain;
+import com.foodorderingapp.activity.admin.customerfragment.CustomerFragment;
 import com.foodorderingapp.activity.admin.customerfragment.CustomerMain;
+import com.foodorderingapp.activity.admin.orderfragment.OrderFragment;
 import com.foodorderingapp.activity.admin.orderfragment.OrderMain;
+import com.foodorderingapp.activity.admin.productfragment.ProductFragement;
 import com.foodorderingapp.activity.admin.productfragment.ProductMain;
+import com.foodorderingapp.activity.admin.promotionfragment.PromotionFragment;
 import com.foodorderingapp.activity.admin.promotionfragment.PromotionMain;
+import com.foodorderingapp.activity.client.homefragment.HomeFragement;
 import com.google.android.material.navigation.NavigationView;
 
-public class AdminMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class AdminMainActivity extends AppCompatActivity{
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -45,10 +51,36 @@ public class AdminMainActivity extends AppCompatActivity implements NavigationVi
         ActionBarDrawerToggle actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+        if(savedInstanceState==null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer1,new ProductFragement()).commit();
+        }
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                Fragment fragment=null;
+                switch (menuItem.getItemId()){
 
-        navigationView.setNavigationItemSelectedListener(this);
+                    case R.id.promotion_management:
+                        fragment =new PromotionFragment();
+                        break;
+                    case R.id.product_management:
+                        fragment = new ProductFragement();
+                        break;
+                    case R.id.order_management:
+                        fragment = new OrderFragment();
+                        break;
+                    case R.id.customer_management:
+                        fragment = new CustomerFragment();
+                        break;
 
-        navigationView.setCheckedItem(R.id.product_management);
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer1,fragment).commit();
+                return true;
+            }
+        });
+
+
+
     }
 
     @Override
@@ -65,33 +97,6 @@ public class AdminMainActivity extends AppCompatActivity implements NavigationVi
         super.onDestroy();
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        Intent intent=null;
-        switch (menuItem.getItemId()){
-            case R.id.promotion_management:
-                intent=new Intent(AdminMainActivity.this, PromotionMain.class);
-                startActivity(intent);
-                break;
-            case R.id.product_management:
-                intent=new Intent(AdminMainActivity.this, ProductMain.class);
-                startActivity(intent);
-                break;
-            case R.id.order_management:
-                intent=new Intent(AdminMainActivity.this, OrderMain.class);
-                startActivity(intent);
-                break;
-            case R.id.comment_management:
-                intent=new Intent(AdminMainActivity.this, CommentMain.class);
-                startActivity(intent);
-                break;
-            case R.id.customer_management:
-                intent=new Intent(AdminMainActivity.this, CustomerMain.class);
-                startActivity(intent);
-                break;
 
-        }
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
-    }
+
 }
