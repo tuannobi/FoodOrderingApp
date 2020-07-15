@@ -1,9 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFF"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.admin.commentfragment.CommentMain">
+    android:layout_height="match_parent">
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QUẢN LÝ ĐÁNH GIÁ"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="#FB8C00"/>
+    <RadioGroup
+        android:orientation="horizontal"
+        android:id="@+id/nhomdanhgia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <RadioButton
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginLeft="10dp"
+                android:id="@+id/motsao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 sao"/>
+            <RadioButton
+                android:layout_marginLeft="10dp"
+                android:id="@+id/haisao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 sao"/>
+            <RadioButton
+                android:layout_toRightOf="@+id/haisao"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/basao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 sao"/>
+            <RadioButton
+                android:layout_marginLeft="10dp"
+                android:id="@+id/bonsao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 sao"/>
+            <RadioButton
+                android:layout_below="@id/motsao"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/namsao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 sao"/>
+
+
+
+    </RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F8EFEF"
+        android:gravity="center"
+        android:text="Đánh giá từ khách hàng"
+        android:textSize="17dp" />
+    <ListView
+        android:id="@+id/lv_dg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

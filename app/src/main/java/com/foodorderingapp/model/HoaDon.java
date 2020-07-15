@@ -5,7 +5,7 @@ import java.util.List;
 
 public class HoaDon {
     private String hoaDonId;
-    public List<ChiTietHoaDon> chiTietHoaDon;
+    private List<ChiTietHoaDon> chiTietHoaDon;
     private Date ngayTao;
     private Date ngayGiao;
     private float phiShip;
@@ -180,4 +180,6 @@ public class HoaDon {
     public void setThoiGianHuy(Date thoiGianHuy) {
         this.thoiGianHuy = thoiGianHuy;
     }
+
+
 }

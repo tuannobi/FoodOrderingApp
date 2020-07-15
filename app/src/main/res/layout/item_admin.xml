@@ -12,22 +12,11 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         />
-    <TextView
 
+    <TextView
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/imageview1"
-        android:id="@+id/tv_ten"
-        android:textColor="#FB8C00"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tên: "
-        android:textSize="25sp"
-
-        />
-    <TextView
-        android:layout_marginTop="25dp"
-        android:layout_toRightOf="@+id/tv_ten"
         android:id="@+id/tv_tensanpham"
         android:textColor="#f000"
         android:layout_width="wrap_content"
@@ -36,29 +25,19 @@
         android:textSize="25sp"
 
         />
-    <TextView
-        android:id="@+id/tv_trangthai"
-        android:textColor="#FB8C00"
-        android:textSize="25sp"
-        android:text="Trạng thái: "
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/tv_ten"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/imageview1"
-        />
+
+
     <TextView
         android:id="@+id/tv_trangthaithucsu"
-        android:textColor="#f000"
         android:textSize="25sp"
-        android:text="Còn"
+        android:textColor="#f000"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Trạng thái"
+        android:layout_toRightOf="@id/imageview1"
         android:layout_below="@id/tv_tensanpham"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_trangthai"
         />
 
 </RelativeLayout>

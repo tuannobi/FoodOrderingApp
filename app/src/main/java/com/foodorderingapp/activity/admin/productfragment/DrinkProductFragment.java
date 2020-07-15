@@ -180,7 +180,12 @@ public class DrinkProductFragment extends Fragment {
             new  DownLoadImageTask(holder.ivHinh).execute(sanpham.getHinhAnhId());
 //        holder.ivHinh.setImageResource(sanpham.getHinhAnhId());
             holder.textView1.setText(sanpham.getTenSanPham());
-            holder.textView2.setText(sanpham.getTrangThai());
+            if(sanpham.getTrangThai().equals("Có")){
+                holder.textView2.setText("Còn");
+            }else{
+                holder.textView2.setText("Hết");
+
+            }
 
 
             return v;
@@ -211,5 +216,10 @@ public class DrinkProductFragment extends Fragment {
         }
 
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }

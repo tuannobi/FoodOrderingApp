@@ -94,6 +94,7 @@ public class ItemDetail extends AppCompatActivity {
                                 System.out.println("Yes");
                                 for (DocumentSnapshot doc : queryDocumentSnapshots) {
                                     d.add(doc.toObject(DanhGia.class));
+
                                 }
                                 danhGias = d;
                                 DanhGiaAdapter adapter = new DanhGiaAdapter(ItemDetail.this, danhGias);

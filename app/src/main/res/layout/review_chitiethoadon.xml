@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:id="@+id/layout"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RatingBar
+        android:keepScreenOn="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/rating_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:saveEnabled="true"
+        android:numStars="5"/>
+    <EditText
+        android:layout_below="@+id/rating_star"
+        android:id="@+id/getRatingg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập nhận xét"/>
+
+    <Button
+        android:id="@+id/nhanxetbutton"
+        android:layout_below="@id/getRatingg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Gửi nhận xét"
+        android:textSize="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

@@ -1,21 +1,23 @@
 package com.foodorderingapp.model;
 
-public class DanhGia {
+import java.io.Serializable;
+
+public class DanhGia implements Serializable {
     private String danhGiaId;
     private int hangMuc;
     private String nhanXet;
     private String sanPhamId;
-    private String khachHangId;
+    private String taiKhoanId;
 
     public DanhGia() {
     }
 
-    public DanhGia(String danhGiaId, int hangMuc, String nhanXet, String sanPhamId, String khachHangId) {
+    public DanhGia(String danhGiaId, int hangMuc, String nhanXet, String sanPhamId, String taiKhoanId) {
         this.danhGiaId = danhGiaId;
         this.hangMuc = hangMuc;
         this.nhanXet = nhanXet;
         this.sanPhamId = sanPhamId;
-        this.khachHangId = khachHangId;
+        this.taiKhoanId = taiKhoanId;
     }
 
     public String getDanhGiaId() {
@@ -50,11 +52,22 @@ public class DanhGia {
         this.sanPhamId = sanPhamId;
     }
 
-    public String getKhachHangId() {
-        return khachHangId;
+    public String getTaiKhoanId() {
+        return taiKhoanId;
     }
 
-    public void setKhachHangId(String khachHangId) {
-        this.khachHangId = khachHangId;
+    public void setTaiKhoanId(String taiKhoanId) {
+        this.taiKhoanId = taiKhoanId;
+    }
+
+    @Override
+    public String toString() {
+        return "DanhGia{" +
+                "danhGiaId='" + danhGiaId + '\'' +
+                ", hangMuc=" + hangMuc +
+                ", nhanXet='" + nhanXet + '\'' +
+                ", sanPhamId='" + sanPhamId + '\'' +
+                ", taiKhoanId='" + taiKhoanId + '\'' +
+                '}';
     }
 }

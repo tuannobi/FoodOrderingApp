@@ -13,10 +13,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
+import com.foodorderingapp.activity.admin.commentfragment.CommentFragment;
+import com.foodorderingapp.activity.admin.commentfragment.CommentMain;
 import com.foodorderingapp.activity.admin.customerfragment.CustomerFragment;
 import com.foodorderingapp.activity.admin.orderfragment.OrderFragment;
 import com.foodorderingapp.activity.admin.productfragment.ProductFragement;
 import com.foodorderingapp.activity.admin.promotionfragment.PromotionFragment;
+import com.foodorderingapp.activity.admin.statistics.CustomerStatisticsFragment;
+import com.foodorderingapp.activity.admin.statistics.OrderStatisticsFragment;
+import com.foodorderingapp.activity.admin.statistics.ProductStatisticsFragment;
+import com.foodorderingapp.activity.client.homefragment.HomeFragement;
 import com.google.android.material.navigation.NavigationView;
 
 public class AdminMainActivity extends AppCompatActivity{
@@ -52,7 +58,9 @@ public class AdminMainActivity extends AppCompatActivity{
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 Fragment fragment=null;
                 switch (menuItem.getItemId()){
-
+                    case R.id.comment_management:
+                        fragment = new CommentFragment();
+                        break;
                     case R.id.promotion_management:
                         fragment =new PromotionFragment();
                         break;
@@ -64,6 +72,15 @@ public class AdminMainActivity extends AppCompatActivity{
                         break;
                     case R.id.customer_management:
                         fragment = new CustomerFragment();
+                        break;
+                    case R.id.order_static_management:
+                        fragment=new OrderStatisticsFragment();
+                        break;
+                    case R.id.customer_static_management:
+                        fragment=new CustomerStatisticsFragment();
+                        break;
+                    case R.id.product_static_management:
+                        fragment=new ProductStatisticsFragment();
                         break;
 
                 }

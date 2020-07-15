@@ -23,7 +23,7 @@ public class ProductFragement extends Fragment {
     }
     public void onViewCreated(@NonNull final View view, @Nullable final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        bottomNavigationView = (BottomNavigationView)view.findViewById(R.id.bottom_navigation);
+        bottomNavigationView = (BottomNavigationView)view.findViewById(R.id.bottom_navigation1);
         if(savedInstanceState==null){
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.framelayout1,new DrinkProductFragment()).commit();
         }
@@ -39,6 +39,9 @@ public class ProductFragement extends Fragment {
                     case R.id.doan:
                         fragment = new FoodProductFragment();
                         System.out.println("Đồ ăn");
+                        break;
+                    case R.id.themthem:
+                        fragment = new InsertItem();
                         break;
                 }
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.framelayout1,fragment).commit();

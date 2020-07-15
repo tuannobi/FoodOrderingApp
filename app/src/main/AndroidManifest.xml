@@ -12,6 +12,7 @@
         <activity android:name=".activity.admin.commentfragment.CommentMain"></activity>
         <activity android:name=".activity.admin.productfragment.ProductMain" />
         <activity android:name=".activity.admin.promotionfragment.PromotionMain" />
+
 <!--        <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ReviewActivity" />-->
         <activity android:name=".activity.client.RegisterActivity" /> <!-- <activity -->
         <activity android:name=".activity.client.MainActivity"/>
@@ -38,6 +39,7 @@
 <!--        <activity android:name=".activity.staff.StaffActivity"-->
 <!--            android:parentActivityName=".activity.LoginActivity"/>-->
         <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ChiTietDonHangActivity"/>
+        <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ReviewActivity"/>
     </application>
 
 </manifest>
