@@ -12,6 +12,7 @@ import com.foodorderingapp.activity.client.homefragment.HomeFragement;
 import com.foodorderingapp.activity.client.mefragment.MeFragement;
 //import com.foodorderingapp.activity.client.myordersfragment.MyOrdersFragement;
 import com.foodorderingapp.activity.client.mefragment.MeFragement;
+import com.foodorderingapp.activity.client.myordersfragment.MyOrdersFragement;
 import com.foodorderingapp.activity.client.shoppingcartfragment.ShoppingCartFragement;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -39,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.myhome:
                         fragment=new HomeFragement(taiKhoanId);
                         break;
-//                    case R.id.myorders:
-//                        fragment=new MyOrdersFragement(taiKhoanId);
-//                        break;
+                    case R.id.myorders:
+                        fragment=new MyOrdersFragement(taiKhoanId);
+                        break;
                     case R.id.shoppingcart:
                         fragment=new ShoppingCartFragement(taiKhoanId);
                         break;

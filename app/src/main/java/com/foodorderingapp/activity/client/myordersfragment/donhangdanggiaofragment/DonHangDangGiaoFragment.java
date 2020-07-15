@@ -52,47 +52,36 @@ public class DonHangDangGiaoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         listView=view.findViewById(R.id.dangGiaoListView);
         //
-        db.collection("KhachHang")
-                .whereEqualTo("taiKhoanId", taiKhoanId)
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+        db.collection("HoaDon")
+                .whereIn("trangThai",new ArrayList<>(Arrays.asList("Đang giao hàng")))
+                .whereEqualTo("taiKhoanId",taiKhoanId)
+                .addSnapshotListener( new EventListener<QuerySnapshot>() {
                     @Override
-                    public void onEvent(@Nullable QuerySnapshot value,
-                                        @Nullable FirebaseFirestoreException e) {
-                        if (e != null) {
-                            Log.w("TAG", "Listen failed.", e);
+                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                        if (e!=null){
                             return;
                         }
-
-                        for (QueryDocumentSnapshot doc : value) {
-                            if (doc.get("khachHangId") != null) {
-                                String khachHangId= (String) doc.get("khachHangId");
-                                //
-                                db.collection("HoaDon")
-                                        .whereIn("trangThai",new ArrayList<>(Arrays.asList("Chờ xử lý","Đang giao hàng")))
-                                        .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                                            @Override
-                                            public void onEvent(@Nullable QuerySnapshot value,
-                                                                @Nullable FirebaseFirestoreException e) {
-                                                if (e != null) {
-                                                    Log.w("TAG", "Listen failed.", e);
-                                                    return;
-                                                }
-
-                                                List<HoaDon> hoaDons = new ArrayList<>();
-                                                for (QueryDocumentSnapshot doc : value) {
-                                                    hoaDons.add(doc.toObject(HoaDon.class));
-                                                }
-                                                MyAdapter myAdapter=new MyAdapter(getContext(),hoaDons);
-                                                System.out.println(hoaDons.toString());
-                                                listView.setAdapter(myAdapter);
-                                            }
-                                        });
-                                //
+                        List<HoaDon> hoaDons = new ArrayList<>();
+                        if (queryDocumentSnapshots != null) {
+                            if(queryDocumentSnapshots.getDocuments().size()>0) {
+                                for (DocumentSnapshot doc : queryDocumentSnapshots) {
+                                    hoaDons.add(doc.toObject(HoaDon.class));
+                                }
+                                System.out.println("Số lượng đơn hàng đang giao: "+hoaDons.size());
+                                if(hoaDons!=null){
+                                    MyAdapter myAdapter=new MyAdapter(getContext(),hoaDons);
+                                    listView.setAdapter(myAdapter);
+                                }
                             }
+
+
+
+                        } else{
+                            Log.d("TAG", "Current data: null");
                         }
+
                     }
                 });
-
 
         //
 
@@ -118,10 +107,10 @@ public class DonHangDangGiaoFragment extends Fragment {
             TextView orderIdTextView=row.findViewById(R.id.orderid);
             TextView totalTextView=row.findViewById(R.id.totalmoney);
             Button button=row.findViewById(R.id.detailbutton);
-            System.out.println(hoaDons.get(position).getThoiGianGiaoHangThanhCong().toString());
-            dayTextView.setText((String) DateFormat.format("dd",hoaDons.get(position).getThoiGianGiaoHangThanhCong()));
-            monthTextView.setText((String) DateFormat.format("MM",hoaDons.get(position).getThoiGianGiaoHangThanhCong()));
-            yearTextView.setText((String) DateFormat.format("yyyy",hoaDons.get(position).getThoiGianGiaoHangThanhCong()));
+            System.out.println(hoaDons.get(position).getThoiGianDangGiaoHang().toString());
+            dayTextView.setText((String) DateFormat.format("dd",hoaDons.get(position).getThoiGianDangGiaoHang()));
+            monthTextView.setText((String) DateFormat.format("MM",hoaDons.get(position).getThoiGianDangGiaoHang()));
+            yearTextView.setText((String) DateFormat.format("yyyy",hoaDons.get(position).getThoiGianDangGiaoHang()));
             orderIdTextView.setText("Order#"+hoaDons.get(position).getHoaDonId());
             totalTextView.setText("Tổng tiền: "+hoaDons.get(position).getTongTienThanhToan());
             button.setText(hoaDons.get(position).getTrangThai());

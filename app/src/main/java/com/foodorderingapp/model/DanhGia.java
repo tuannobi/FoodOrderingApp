@@ -57,6 +57,17 @@ public class DanhGia implements Serializable {
     }
 
     public void setTaiKhoanId(String taiKhoanId) {
-        this.taiKhoanId =taiKhoanId;
+        this.taiKhoanId = taiKhoanId;
+    }
+
+    @Override
+    public String toString() {
+        return "DanhGia{" +
+                "danhGiaId='" + danhGiaId + '\'' +
+                ", hangMuc=" + hangMuc +
+                ", nhanXet='" + nhanXet + '\'' +
+                ", sanPhamId='" + sanPhamId + '\'' +
+                ", taiKhoanId='" + taiKhoanId + '\'' +
+                '}';
     }
 }
