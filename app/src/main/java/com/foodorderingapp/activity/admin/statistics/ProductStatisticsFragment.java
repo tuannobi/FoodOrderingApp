@@ -33,6 +33,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -41,6 +42,24 @@ public class ProductStatisticsFragment extends Fragment {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private BarChart chart;
     private Spinner spinner;
+    private static List<Integer> arrays=null;
+    private static  List<String> tenSanPhamArrayList=null;
+
+    private static void addValue(Integer value){
+        if(arrays==null){
+            arrays=new ArrayList<>();
+        }else{
+            arrays.add(value);
+        }
+    }
+
+    private static void addValue(String value){
+        if(tenSanPhamArrayList==null){
+            tenSanPhamArrayList=new ArrayList<>();
+        }else{
+            tenSanPhamArrayList.add(value);
+        }
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_productstatic_main,container,false);
@@ -55,7 +74,7 @@ public class ProductStatisticsFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 db.collection("SanPham")
-//                        .orderBy("doanhThu", Query.Direction.DESCENDING).limit(Integer.parseInt(spinner.getSelectedItem().toString()))
+                        .limit(Integer.parseInt(spinner.getSelectedItem().toString()))
                         .addSnapshotListener( new EventListener<QuerySnapshot>() {
                             @Override
                             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
@@ -73,75 +92,6 @@ public class ProductStatisticsFragment extends Fragment {
                                         }
 
                                     }
-                                    final Integer[] soLuongArray=new Integer[sanPhams.size()];
-                                    String[] tenSanPhamArray=new String[sanPhams.size()];
-                                    Arrays.fill(soLuongArray,0);
-                                    //Đếm số lượng từng sản phẩm
-                                    for(int i=0;i<sanPhams.size();i++){
-                                        final int finalI = i;
-                                        final String tempTenSanPham=sanPhams.get(i).getTenSanPham();
-                                        tenSanPhamArray[i]=sanPhams.get(i).getTenSanPham();
-//                                        db.collection("HoaDon")
-//                                            .addSnapshotListener(new EventListener<QuerySnapshot>() {
-//                                                @Override
-//                                                public void onEvent(@Nullable QuerySnapshot value,
-//                                                                    @Nullable FirebaseFirestoreException e) {
-//                                                    if (e != null) {
-//                                                        Log.w("TAG", "Listen failed.", e);
-//                                                        return;
-//                                                    }
-//                                                    SanPham tempSanPham=sanPhams.get(finalI);
-//                                                    System.out.println("SanPhamId"+tempSanPham.getSanPhamId());
-//                                                    List<HoaDon> hoaDons = new ArrayList<>();
-//                                                    for (QueryDocumentSnapshot doc : value) {
-//                                                        if (doc != null) {
-//                                                            hoaDons.add(doc.toObject(HoaDon.class));
-//                                                        }
-//                                                    }
-//                                                    //Kiếm tra trong từng chi tiết hóa đơn
-//                                                    for(HoaDon tempHoaDon:hoaDons){
-//                                                        if(tempHoaDon!=null){
-//                                                            for(ChiTietHoaDon cthd: tempHoaDon.getChiTietHoaDon()){
-//                                                                if(cthd.getSanPhamId().equals(tempTenSanPham) && cthd!=null){
-//                                                                    soLuongArray[finalI]+=1;
-//                                                                }
-//                                                            }
-//                                                        }
-//                                                    }
-//                                                }
-//                                            });
-                                        db.collection("HoaDon")
-                                                .whereEqualTo("capital", true)
-                                                .get()
-                                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                                        if (task.isSuccessful()) {
-                                                            List<HoaDon> hoaDons=new ArrayList<>();
-                                                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                                                hoaDons.add(document.toObject(HoaDon.class));
-                                                            }
-                                                            if(hoaDons!=null){
-//                                                                Kiếm tra trong từng chi tiết hóa đơn
-                                                                        for(HoaDon tempHoaDon:hoaDons){
-                                                                            if(tempHoaDon!=null){
-                                                                                for(ChiTietHoaDon cthd: tempHoaDon.getChiTietHoaDon()){
-                                                                                    if(cthd.getSanPhamId().equals(tempTenSanPham) && cthd!=null){
-                                                                                        soLuongArray[finalI]+=1;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                            }
-
-                                                        } else {
-                                                            Log.d("TAG", "Error getting documents: ", task.getException());
-                                                        }
-                                                    }
-                                                });
-                                    }
-                                    System.out.println(soLuongArray.length);
-                                    System.out.println(tenSanPhamArray.length);
 
                                 } else{
                                     Log.d("TAG", "Current data: null");
@@ -180,11 +130,11 @@ public class ProductStatisticsFragment extends Fragment {
 
     }
 
-    public void setChart(String[] tenKhachHangArray,Float[] doanhThuArray){
+    public void setChart(String[] tenSanPhamArray,Integer[] soLanArray){
         ArrayList values1 = new ArrayList();
 
-        for(int i=0;i<doanhThuArray.length;i++){
-            values1.add(new BarEntry(i, doanhThuArray[i]));
+        for(int i=0;i<soLanArray.length;i++){
+            values1.add(new BarEntry(i, soLanArray[i]));
         }
 
 //        ArrayList valuesWomen = new ArrayList();
@@ -204,8 +154,8 @@ public class ProductStatisticsFragment extends Fragment {
 
         ArrayList month = new ArrayList();
 
-        for(int i=0;i<tenKhachHangArray.length;i++){
-            month.add(tenKhachHangArray[i]);
+        for(int i=0;i<tenSanPhamArray.length;i++){
+            month.add(tenSanPhamArray[i]);
         }
 
         XAxis xAxis = chart.getXAxis();
@@ -213,8 +163,8 @@ public class ProductStatisticsFragment extends Fragment {
 //        xAxis.setCenterAxisLabels(true);
 
         // create 2 datasets
-        BarDataSet set1 = new BarDataSet(values1, "Doanh thu kháchh hàng");
-        set1.setColor(Color.RED);
+        BarDataSet set1 = new BarDataSet(values1, "Số lần sản phẩm được mua");
+        set1.setColor(Color.YELLOW);
 //        BarDataSet set2 = new BarDataSet(valuesWomen, "Hóa đơn bán thành công");
 //        set2.setColor(Color.RED);
 
