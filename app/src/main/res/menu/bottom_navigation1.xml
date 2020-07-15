@@ -8,4 +8,8 @@
         android:id="@+id/doan"
         android:icon="@drawable/food_icon"
         android:title="Thức ăn"/>
+    <item
+        android:id="@+id/themthem"
+        android:icon="@drawable/plus"
+        android:title="Thêm sản phẩm"/>
 </menu>

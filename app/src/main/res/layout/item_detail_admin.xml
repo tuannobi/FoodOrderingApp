@@ -184,7 +184,7 @@
             android:background="#FB8C00"
             android:textColor="#FFF"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="210dp"
+            android:layout_marginLeft="260dp"
             android:layout_below="@+id/trangthai"
             android:textAllCaps="false"
             android:id="@+id/nutsua"

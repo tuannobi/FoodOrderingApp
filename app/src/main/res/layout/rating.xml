@@ -5,18 +5,22 @@
     android:id="@+id/layout"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+
     <RatingBar
-        android:keepScreenOn="true"
-        android:layout_centerHorizontal="true"
+        android:secondaryProgressTint="#E53935"
+        android:progressBackgroundTint="#FFF"
         android:id="@+id/rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:saveEnabled="true"
-        android:numStars="5"/>
+        android:layout_centerHorizontal="true"
+        android:isIndicator="true"
+        android:numStars="5" />
     <TextView
         android:layout_below="@+id/rating"
         android:id="@+id/getRating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Get Rating "/>
+
 </RelativeLayout>

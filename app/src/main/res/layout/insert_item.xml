@@ -20,27 +20,27 @@
     <EditText
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:id="@+id/tensanpham"
+        android:id="@+id/tensanpham1"
         android:hint="Tên sản phẩm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
     <EditText
-        android:id="@+id/giagoc"
+        android:id="@+id/giagoc1"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Giá gốc"/>
     <EditText
-        android:id="@+id/giabanle"
+        android:id="@+id/giabanle1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Giá bán lẻ"/>
     <EditText
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:id="@+id/mota"
+        android:id="@+id/mota1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:hint="Mô tả"/>
@@ -61,13 +61,13 @@
         <RadioButton
             android:layout_marginLeft="50dp"
             android:checked="true"
-            android:id="@+id/phanloaicafe"
+            android:id="@+id/phanloaicafe1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cà phê"/>
+            android:text="Thức uống"/>
 
             <RadioButton
-                android:id="@+id/phanloaitrasua"
+                android:id="@+id/phanloaitrasua1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
@@ -85,10 +85,10 @@
             android:textColor="#FFF"
             android:background="#FB8C00"
             android:padding="10dp"
-            android:id="@+id/chonhinhanh"
+            android:id="@+id/chonhinhanh1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chọn hình ảnh"
+            android:text="Chọn hình ảnh   "
             />
         <Button
             android:padding="10dp"
@@ -97,8 +97,8 @@
             android:layout_marginTop="20dp"
             android:textColor="#FFF"
             android:background="#FB8C00"
-            android:layout_below="@id/chonhinhanh"
-            android:id="@+id/themsanpham"
+            android:layout_below="@id/chonhinhanh1"
+            android:id="@+id/themsanpham1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Thêm sản phẩm"
@@ -107,12 +107,12 @@
         <ImageView
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
-            android:id="@+id/hinhanh"
+            android:id="@+id/hinhanh1"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_gravity="center"
             android:layout_marginLeft="35dp"
-            android:layout_toRightOf="@id/chonhinhanh" />
+            android:layout_toRightOf="@id/chonhinhanh1" />
     </RelativeLayout>
 
     </LinearLayout>

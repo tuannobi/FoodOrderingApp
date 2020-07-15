@@ -14,6 +14,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
+import com.foodorderingapp.activity.admin.commentfragment.CommentFragment;
 import com.foodorderingapp.activity.admin.commentfragment.CommentMain;
 import com.foodorderingapp.activity.admin.customerfragment.CustomerFragment;
 import com.foodorderingapp.activity.admin.orderfragment.OrderFragment;
@@ -58,7 +59,9 @@ public class AdminMainActivity extends AppCompatActivity{
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 Fragment fragment=null;
                 switch (menuItem.getItemId()){
-
+                    case R.id.comment_management:
+                        fragment = new CommentFragment();
+                        break;
                     case R.id.promotion_management:
                         fragment =new PromotionFragment();
                         break;

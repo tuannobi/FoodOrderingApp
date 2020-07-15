@@ -5,19 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#DDD7D7">
+    android:background="#FFFF">
+
     <SearchView
         android:id="@+id/searchview1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <GridView
-        android:padding="10dp"
-        android:horizontalSpacing="10dp"
-        android:verticalSpacing="10dp"
-        android:columnWidth="190dp"
-        android:numColumns="2"
         android:id="@+id/gridview1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:columnWidth="190dp"
+        android:horizontalSpacing="10dp"
+        android:numColumns="2"
+        android:padding="10dp"
+        android:verticalSpacing="10dp">
+
+    </GridView>
 
 </LinearLayout>
