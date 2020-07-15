@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:padding="10dp"
+    android:background="#FFF"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/z1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:textColor="#F000"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Mã khuyến mãi "/>
+    </RelativeLayout>
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/z1"
+        android:id="@+id/cou"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:hint="Nhập mã khuyến mãi tại đây"/>
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/z2"
+        android:layout_below="@id/cou"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_marginLeft="20dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:id="@+id/huy"
+            android:text="Hủy"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <Button
+
+            android:textAllCaps="false"
+            android:background="#FB8C00"
+            android:id="@+id/apdung"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/huy"
+            android:text="Áp dụng"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

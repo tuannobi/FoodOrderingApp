@@ -21,6 +21,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.foodorderingapp.R;
+import com.foodorderingapp.dialog.DialogCoupon;
 import com.foodorderingapp.dialog.DialogItem1;
 import com.foodorderingapp.model.ChiTietHoaDon;
 import com.foodorderingapp.model.HoaDon;
@@ -54,6 +55,8 @@ public class ShoppingCartFragement extends Fragment {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     Button btn_thanhtoan;
     float tongtienn =0;
+    Button makhuyenmai;
+    TextView tienkhuyenmai;
     public ShoppingCartFragement(String taiKhoanId){
         this.taiKhoanId=taiKhoanId;
     }
@@ -100,6 +103,7 @@ public class ShoppingCartFragement extends Fragment {
                                 gridView.setAdapter(adapter);
                                 textViewPhiShip.setText(h.get(0).getPhiShip()+"đ");
                                 textViewTongTien.setText(h.get(0).getTongTienThanhToan() + "đ");
+                                tienkhuyenmai.setText("- "+h.get(0).getTienKhuyenMai()+" đ");
                             }
 
 
@@ -140,6 +144,19 @@ public class ShoppingCartFragement extends Fragment {
                 f.show(ft, "dialog");
             }
         });
+        makhuyenmai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("hoaDonId",hoaDonId);
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+                DialogCoupon f = new DialogCoupon();
+                f.setArguments(bundle);
+                f.show(ft, "dialog");
+            }
+        });
+
 
         btn_thanhtoan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,12 +225,14 @@ public class ShoppingCartFragement extends Fragment {
         }
     }
     public void AnhXa(View view){
+        tienkhuyenmai = view.findViewById(R.id.tv_tiengiam);
         diachi = (EditText)view.findViewById(R.id.diachi);
         textViewTongTien = (TextView)view.findViewById(R.id.tv_tongtien);
         textViewPhiShip = (TextView)view.findViewById(R.id.tv_phiship);
         chiTietHoaDon1s = new ArrayList<ChiTietHoaDon>();
         gridView = (ListView)view.findViewById(R.id.lv_sp_giohang);
         btn_thanhtoan = (Button)view.findViewById(R.id.btn_thanhtoan);
+        makhuyenmai= (Button)view.findViewById(R.id.btn_makhuyenmai);
         spinner = (Spinner)view.findViewById(R.id.spinner);
         AnhXaQuan();
         ArrayAdapter arrayAdapter = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,quan);

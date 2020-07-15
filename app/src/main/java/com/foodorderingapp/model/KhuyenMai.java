@@ -1,21 +1,24 @@
 package com.foodorderingapp.model;
 
+import com.google.firebase.Timestamp;
+
+import java.util.Date;
+
 public class KhuyenMai {
     private String khuyenMaiId;
-    private String tenKhuyenMai;
-    private String hinhAnh;
-    private String moTa;
-    private String trangThai;
+    private Timestamp ngayTao;
+    private Timestamp ngayHetHan;
+    private float phanTramGiam;
+
 
     public KhuyenMai() {
     }
 
-    public KhuyenMai(String khuyenMaiId, String tenKhuyenMai, String hinhAnh, String moTa, String trangThai) {
+    public KhuyenMai(String khuyenMaiId, Timestamp ngayTao, Timestamp ngayHetHan, float phanTramGiam) {
         this.khuyenMaiId = khuyenMaiId;
-        this.tenKhuyenMai = tenKhuyenMai;
-        this.hinhAnh = hinhAnh;
-        this.moTa = moTa;
-        this.trangThai = trangThai;
+        this.ngayTao = ngayTao;
+        this.ngayHetHan = ngayHetHan;
+        this.phanTramGiam = phanTramGiam;
     }
 
     public String getKhuyenMaiId() {
@@ -26,35 +29,27 @@ public class KhuyenMai {
         this.khuyenMaiId = khuyenMaiId;
     }
 
-    public String getTenKhuyenMai() {
-        return tenKhuyenMai;
+    public Timestamp getNgayTao() {
+        return ngayTao;
     }
 
-    public void setTenKhuyenMai(String tenKhuyenMai) {
-        this.tenKhuyenMai = tenKhuyenMai;
+    public void setNgayTao(Timestamp ngayTao) {
+        this.ngayTao = ngayTao;
     }
 
-    public String getHinhAnh() {
-        return hinhAnh;
+    public Timestamp getNgayHetHan() {
+        return ngayHetHan;
     }
 
-    public void setHinhAnh(String hinhAnh) {
-        this.hinhAnh = hinhAnh;
+    public void setNgayHetHan(Timestamp ngayHetHan) {
+        this.ngayHetHan = ngayHetHan;
     }
 
-    public String getMoTa() {
-        return moTa;
+    public float getPhantramgiam() {
+        return phanTramGiam;
     }
 
-    public void setMoTa(String moTa) {
-        this.moTa = moTa;
-    }
-
-    public String getTrangThai() {
-        return trangThai;
-    }
-
-    public void setTrangThai(String trangThai) {
-        this.trangThai = trangThai;
+    public void setPhantramgiam(float phanTramGiam) {
+        this.phanTramGiam = phanTramGiam;
     }
 }

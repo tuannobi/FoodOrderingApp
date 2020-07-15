@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#DDD7D7">
+    android:background="#FFF">
     <SearchView
         android:id="@+id/searchview_food"
         android:layout_width="match_parent"

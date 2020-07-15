@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:padding="10dp"
+    android:background="#FFF"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/z1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RatingBar
+
+            android:keepScreenOn="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/rating1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:saveEnabled="true"
+            android:numStars="5"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/z1"
+        android:id="@+id/getRating1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="Get Rating "/>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/z2"
+        android:layout_below="@id/getRating1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/t1"
+            android:text="Tên khách hàng:"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/tencuakhachang"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/t1"
+            android:text="Lê Trần Duy Sang"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/z3"
+        android:layout_below="@id/z2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/t2"
+            android:text="Số điện thoại:"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/sodienthoai"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/t2"
+            android:text="0909787301"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/z3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/xoabinhluan"
+            android:textColor="#FFF"
+            android:background="#FB8C00"
+            android:textAllCaps="false"
+            android:text="Xóa bình luận"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+</RelativeLayout>

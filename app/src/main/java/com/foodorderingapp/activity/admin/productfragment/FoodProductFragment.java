@@ -198,4 +198,7 @@ public class FoodProductFragment extends Fragment {
 
 
     }
+    public void onDestroy() {
+        super.onDestroy();
+    }
 }
