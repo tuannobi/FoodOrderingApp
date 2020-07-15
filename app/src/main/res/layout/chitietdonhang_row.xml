@@ -5,45 +5,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:layout_margin="10dp"
-    android:padding="10dp">
-    <LinearLayout
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:orientation="vertical">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
+    android:orientation="horizontal">
         <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/orderidLichSu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Tên sản phẩm"
-            android:textSize="15dp"
-            android:textStyle="bold"/>
-    </LinearLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/detailbuttonLichSu"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/detailbutton"
-            android:text="Đánh giá"
-            android:backgroundTint="@color/yellow"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</LinearLayout>
+            android:layout_height="80dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/chiTiet_TenSanPham"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="Tên sản phẩm"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/ChiTiet_DonGia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Đơn giá"
+                android:textSize="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/ChiTiet_SoLuong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Số lượng"
+                android:textSize="10dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/ChiTiet_TongTienThanhToan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Tổng tiền"
+                android:textSize="10dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/danhGiaButton"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/detailbutton"
+                android:text="Đánh giá"
+                android:backgroundTint="@color/yellow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>

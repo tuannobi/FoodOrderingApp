@@ -19,6 +19,17 @@
         <item
             android:id="@+id/order_static_management"
             android:title="Doanh thu theo hóa đơn"/>
+        <item
+            android:id="@+id/customer_static_management"
+            android:title="Thống kê Top khách hàng"/>
+
+        <item
+            android:id="@+id/product_static_management"
+            android:title="Thống kê sản phẩm bán chạy"/>
+        <item
+            android:id="@+id/logout_admin"
+            android:title="Đăng xuất"
+            />
     </group>
 
             <item

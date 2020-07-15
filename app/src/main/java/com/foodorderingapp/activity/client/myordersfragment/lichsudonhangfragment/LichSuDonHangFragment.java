@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,6 +39,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -137,16 +139,17 @@ public class LichSuDonHangFragment extends Fragment {
             orderIdTextView.setText("Order#"+hoaDons.get(position).getHoaDonId());
             totalTextView.setText("Tổng tiền: "+hoaDons.get(position).getTongTienThanhToan());
             //
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(getContext(),ChiTietDonHangActivity.class);
+                    intent.putExtra("chiTietDonHang", (Serializable)hoaDons.get(position).getChiTietHoaDon());
+                    intent.putExtra("tongTienCanThanhToan",hoaDons.get(position).getTongTienThanhToan());
+                    intent.putExtra("taiKhoanId",taiKhoanId);
+                    startActivity(intent);
 
-//            button.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent=new Intent(getContext(), ChiTietDonHangActivity.class);
-//                    intent.putExtra("khachHangId", hoaDons.get(position).getKhachHangId());
-//                    intent.putExtra("hoaDonId", hoaDons.get(position).getHoaDonId());
-//                    startActivity(intent);
-//                }
-//            });
+                }
+            });
             //
             return row;
         }

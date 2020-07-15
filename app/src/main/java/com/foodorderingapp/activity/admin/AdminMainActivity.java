@@ -19,7 +19,9 @@ import com.foodorderingapp.activity.admin.customerfragment.CustomerFragment;
 import com.foodorderingapp.activity.admin.orderfragment.OrderFragment;
 import com.foodorderingapp.activity.admin.productfragment.ProductFragement;
 import com.foodorderingapp.activity.admin.promotionfragment.PromotionFragment;
+import com.foodorderingapp.activity.admin.statistics.CustomerStatisticsFragment;
 import com.foodorderingapp.activity.admin.statistics.OrderStatisticsFragment;
+import com.foodorderingapp.activity.admin.statistics.ProductStatisticsFragment;
 import com.foodorderingapp.activity.client.homefragment.HomeFragement;
 import com.google.android.material.navigation.NavigationView;
 
@@ -71,6 +73,12 @@ public class AdminMainActivity extends AppCompatActivity{
                         break;
                     case R.id.order_static_management:
                         fragment=new OrderStatisticsFragment();
+                        break;
+                    case R.id.customer_static_management:
+                        fragment=new CustomerStatisticsFragment();
+                        break;
+                    case R.id.product_static_management:
+                        fragment=new ProductStatisticsFragment();
                         break;
 
                 }
