@@ -60,13 +60,13 @@ public class UpdateThongTin extends AppCompatActivity
         db.collection("KhachHang")
                 .whereEqualTo("taiKhoanId", taiKhoanId)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value,
-                                        @Nullable FirebaseFirestoreException e) {
-                        if (e != null) {
-                            Log.w("TAG", "Listen failed.", e);
-                            return;
-                        }
+                            @Override
+                            public void onEvent(@Nullable QuerySnapshot value,
+                                                @Nullable FirebaseFirestoreException e) {
+                                if (e != null) {
+                                    Log.w("TAG", "Listen failed.", e);
+                                    return;
+                                }
 
                         for (QueryDocumentSnapshot doc : value) {
                             khachHang = doc.toObject(KhachHang.class);
@@ -107,6 +107,7 @@ public class UpdateThongTin extends AppCompatActivity
                                                          newKhachHang.setDiaChi(Editdchi.getText().toString());
                                                          newKhachHang.setSDT(Editsdt.getText().toString());
                                                          newKhachHang.setTaiKhoanId(khachHang.getTaiKhoanId());
+                                                         newKhachHang.setDoanhThu(khachHang.getDoanhThu());
                                                           SimpleDateFormat simpleDateFormat=new SimpleDateFormat("MM/dd/yyyy");
                                                           try {
                                                               newKhachHang.setNgaySinh(simpleDateFormat.parse(Editngsinh.getText().toString()));
