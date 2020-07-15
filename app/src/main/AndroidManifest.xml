@@ -10,14 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.admin.commentfragment.CommentMain"></activity>
-        <activity android:name=".activity.admin.customerfragment.CustomerMain" />
-        <activity android:name=".activity.admin.orderfragment.OrderMain" />
         <activity android:name=".activity.admin.productfragment.ProductMain" />
         <activity android:name=".activity.admin.promotionfragment.PromotionMain" />
 <!--        <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ReviewActivity" />-->
         <activity android:name=".activity.client.RegisterActivity" /> <!-- <activity -->
         <activity android:name=".activity.client.MainActivity"/>
         <activity android:name=".activity.admin.AdminMainActivity"/>
+        <activity android:name=".activity.admin.customerfragment.Custom_detail"/>
         <!-- android:name=".activity.client.MainActivity" -->
         <!-- android:parentActivityName=".activity.LoginActivity" /> &lt;!&ndash; <activity &ndash;&gt; -->
         <!-- android:name=".activity.admin.AdminMainActivity" -->

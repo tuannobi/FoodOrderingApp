@@ -15,6 +15,6 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <string name="line"> Not crossed <strike> crossed </strike> </string>
 
 </resources>

@@ -1,6 +1,5 @@
 package com.foodorderingapp.activity.admin;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,16 +13,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
-import com.foodorderingapp.activity.admin.commentfragment.CommentMain;
 import com.foodorderingapp.activity.admin.customerfragment.CustomerFragment;
-import com.foodorderingapp.activity.admin.customerfragment.CustomerMain;
 import com.foodorderingapp.activity.admin.orderfragment.OrderFragment;
-import com.foodorderingapp.activity.admin.orderfragment.OrderMain;
 import com.foodorderingapp.activity.admin.productfragment.ProductFragement;
-import com.foodorderingapp.activity.admin.productfragment.ProductMain;
 import com.foodorderingapp.activity.admin.promotionfragment.PromotionFragment;
-import com.foodorderingapp.activity.admin.promotionfragment.PromotionMain;
-import com.foodorderingapp.activity.client.homefragment.HomeFragement;
 import com.google.android.material.navigation.NavigationView;
 
 public class AdminMainActivity extends AppCompatActivity{
