@@ -147,6 +147,7 @@ public class ChiTietKhuyenMaiActivity extends AppCompatActivity {
                         });
             }
         });
+        finish();
     }
 
     private void updateNgayBatDau() {

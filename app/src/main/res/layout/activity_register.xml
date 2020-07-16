@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/background_login"
     android:backgroundTint="#f5f5f5"
     tools:context=".activity.client.RegisterActivity">
@@ -61,6 +61,21 @@
         app:layout_constraintTop_toBottomOf="@+id/hoTenEditText" />
 
     <EditText
+        android:id="@+id/EmailEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/emailfield"
+        android:ems="10"
+        android:hint="Số điện thoại"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SdtEditText" />
+
+
+    <EditText
         android:id="@+id/diaChiEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,7 +87,7 @@
         android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SdtEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/EmailEditText" />
 
     <EditText
         android:id="@+id/usernameEditText"
@@ -116,23 +131,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 
-    <TextView
-        android:id="@+id/quoteTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Chúng tôi sẽ không sử dụng thông tin của bạn cho bất kỳ mục đích nào khác.
-Bằng cách đăng ký, bạn đồng ý các điều khoản sử dụng"
-        android:textAlignment="center"
-        android:textColor="#949494"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
 
     <Button
         android:textAllCaps="false"
-        android:id="@+id/loginButton"
+        android:id="@+id/registerButton"
         android:layout_width="275dp"
         android:layout_height="38dp"
         android:layout_marginTop="12dp"
@@ -145,5 +148,19 @@ Bằng cách đăng ký, bạn đồng ý các điều khoản sử dụng"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/repasswordEditText" />
+
+    <TextView
+        android:id="@+id/quoteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Chúng tôi sẽ không sử dụng thông tin của bạn cho bất kỳ mục đích nào khác.
+Bằng cách đăng ký, bạn đồng ý các điều khoản sử dụng"
+        android:textAlignment="center"
+        android:textColor="#949494"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
