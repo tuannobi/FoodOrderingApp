@@ -15,79 +15,75 @@
         android:layout_above="@+id/ll_thanhtoan"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <RelativeLayout
             android:layout_weight="2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:weightSum="10">
+            android:padding="10dp"
+            >
 
             <ImageView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:id="@+id/k1"
+                android:layout_centerVertical="true"
+                android:layout_width="40dp"
+                android:layout_height="93dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:src="@drawable/ic_vitri" />
 
             <LinearLayout
-
-                android:layout_width="0dp"
+                android:layout_toRightOf="@id/k1"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="9"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_gravity="bottom"
-                    android:layout_weight="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:textStyle="bold"
-                    android:text="Địa chỉ nhận hàng của bạn:"
-                    android:textSize="14sp"/>
-                <LinearLayout
+                <RelativeLayout
                     android:layout_gravity="bottom"
                     android:layout_weight="7"
-                    android:weightSum="5"
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0dp">
+
                     <EditText
+                        android:layout_centerVertical="true"
                         android:id="@+id/diachi"
-                        android:layout_gravity="end"
-                        android:layout_weight="3"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Địa chỉ nhận hàng"
+                        android:layout_marginBottom="30dp" />
 
                     <Spinner
                         android:id="@+id/spinner"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2" />
-                </LinearLayout>
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/diachi" />
+                </RelativeLayout>
 
 
             </LinearLayout>
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_weight="8"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="vertical">
-
             <TextView
+                android:textColor="#f000"
+                android:textSize="20sp"
                 android:gravity="center"
-                android:background="#817D7D"
+                android:background="#F8EFEF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:text="Chi tiết đơn hàng"
+                android:text="Chi Tiết Đơn Hàng"
                 android:textStyle="bold" />
 
             <ListView
+                android:padding="10dp"
                 android:id="@+id/lv_sp_giohang"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"></ListView>
@@ -110,6 +106,8 @@
             android:weightSum="2">
 
             <TextView
+                android:textColor="#f000"
+                android:textStyle="bold"
                 android:id="@+id/textView5"
                 android:layout_width="138dp"
                 android:layout_height="wrap_content"
@@ -118,6 +116,7 @@
                 android:textSize="16sp" />
 
             <TextView
+
                 android:id="@+id/tv_phiship"
                 android:layout_width="161dp"
                 android:layout_height="wrap_content"
@@ -125,7 +124,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:text="0 Đ"
-                android:textSize="16sp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
     <LinearLayout
@@ -134,6 +133,8 @@
         android:layout_margin="10dp"
         android:weightSum="2">
         <TextView
+            android:textColor="#f000"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -148,15 +149,18 @@
             android:layout_weight="1"
             android:gravity="right"
             android:text="-0 Đ"
-            android:textSize="16sp" />
+            android:textSize="15sp" />
     </LinearLayout>
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:weightSum="2">
 
             <TextView
+                android:textColor="#f000"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -171,7 +175,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:text="0 Đ"
-                android:textSize="16sp" />
+                android:textSize="15sp" />
 
 
         </LinearLayout>
@@ -187,6 +191,7 @@
                 android:layout_marginBottom="5dp"
                 android:text="MÃ KHUYỄN MÃI" />
             <Button
+                android:textColor="#FFFF"
                 android:layout_marginLeft="50dp"
                 android:layout_toRightOf="@id/btn_makhuyenmai"
                 android:background="#FB8C00"

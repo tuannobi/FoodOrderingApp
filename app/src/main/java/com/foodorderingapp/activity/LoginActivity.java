@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText userNameEditText;
     private EditText passwordEditText;
     private Button loginButton;
+    private Button dangkyButton;
     private static final String CUSTOMER_ROLE="Khách hàng";
     private static final String SELLINGSTAFF_ROLE="Nhân viên bán hàng";
     private static final String SHIPPINGSTAFF_ROLE="Nhân viên giao hàng";
@@ -41,6 +42,9 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText=findViewById(R.id.passwordEditText);
         loginButton=findViewById(R.id.loginButton);
         loginButtonEvent();
+    }
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     private void loginButtonEvent(){

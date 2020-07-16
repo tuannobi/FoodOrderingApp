@@ -49,6 +49,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ItemFragment extends AppCompatActivity {
+    int giaa;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     TextView ten;
     TextView gia;
@@ -68,7 +69,8 @@ public class ItemFragment extends AppCompatActivity {
         this.taiKhoanId = (String) getIntent().getSerializableExtra("taiKhoanId");
         System.out.println("Mã tài khoản của khách hàng vừa đăng nhập là: " + this.taiKhoanId);
         ten.setText(data.getTenSanPham());
-        gia.setText(data.getGiaBanLe()+"");
+        giaa = (int)data.getGiaBanLe();
+        gia.setText(giaa+"đ");
         sl.setText("1");
         mua.setText(data.getGiaBanLe()+"");
         new  DownLoadImageTask(anh).execute(data.getHinhAnhId());
@@ -229,19 +231,19 @@ public class ItemFragment extends AppCompatActivity {
     public void bamNutAdd(){
         sl.setText((Integer.parseInt((String) sl.getText())+1)+"");
         int soluong = Integer.parseInt((String) sl.getText());
-        float tongtien = soluong * Float.parseFloat((String) gia.getText());
-        mua.setText(tongtien+"");
+        int tongtien = soluong * giaa;
+        mua.setText(tongtien+"đ");
     }
 
     public void bamNutSubtract(){
         if ((Integer.parseInt((String) sl.getText())==2) || (Integer.parseInt((String) sl.getText())==1)) {
             sl.setText(1+"");
-            mua.setText(gia.getText());
+            mua.setText(giaa+"đ");
         } else {
             sl.setText((Integer.parseInt((String) sl.getText()) - 1) + "");
             int soluong = Integer.parseInt((String) sl.getText());
-            float tongtien = soluong * Float.parseFloat((String) gia.getText());
-            mua.setText(tongtien+"");
+            float tongtien = soluong * giaa;
+            mua.setText(tongtien+"đ");
         }
     }
     public void AnhXa() {

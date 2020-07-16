@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".activity.admin.commentfragment.CommentMain"></activity>
         <activity android:name=".activity.admin.productfragment.ProductMain" />
         <activity android:name=".activity.admin.promotionfragment.PromotionMain" />
