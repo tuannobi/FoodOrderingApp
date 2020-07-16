@@ -144,6 +144,8 @@ public class DonHangDangGiaoFragment extends Fragment {
                                                     db.collection("HoaDon")
                                                             .document(hoaDons.get(position).getHoaDonId())
                                                             .set(hoaDon);
+                                                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+                                                    ft.detach(DonHangDangGiaoFragment.this).attach(DonHangDangGiaoFragment.this).commit();
                                                 } else {
                                                     Log.d("TAG", "No such document");
                                                 }
