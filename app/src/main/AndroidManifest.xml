@@ -9,16 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.admin.commentfragment.CommentMain"></activity>
+        <activity android:name=".activity.admin.promotionfragment.ChiTietKhuyenMaiActivity"></activity>
+        <activity android:name=".activity.admin.commentfragment.CommentMain" />
         <activity android:name=".activity.admin.productfragment.ProductMain" />
-        <activity android:name=".activity.admin.promotionfragment.PromotionMain" />
-
-<!--        <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ReviewActivity" />-->
+        <activity android:name=".activity.admin.promotionfragment.PromotionMain" /> <!-- <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ReviewActivity" /> -->
         <activity android:name=".activity.client.RegisterActivity" /> <!-- <activity -->
-        <activity android:name=".activity.client.MainActivity"/>
-        <activity android:name=".activity.admin.AdminMainActivity"/>
-        <activity android:name=".activity.admin.customerfragment.Custom_detail"/>
-        <!-- android:name=".activity.client.MainActivity" -->
+        <activity android:name=".activity.client.MainActivity" />
+        <activity android:name=".activity.admin.AdminMainActivity" />
+        <activity android:name=".activity.admin.customerfragment.Custom_detail" /> <!-- android:name=".activity.client.MainActivity" -->
         <!-- android:parentActivityName=".activity.LoginActivity" /> &lt;!&ndash; <activity &ndash;&gt; -->
         <!-- android:name=".activity.admin.AdminMainActivity" -->
         <!-- android:parentActivityName=".activity.LoginActivity" /> -->
@@ -32,14 +30,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.admin.productfragment.ItemDetail"/>
-        <activity android:name=".activity.client.homefragment.ItemFragment"/>
-        <activity android:name=".activity.client.mefragment.UpdateThongTin"/>
-        <activity android:name=".activity.client.mefragment.UpdatePass" />
-<!--        <activity android:name=".activity.staff.StaffActivity"-->
-<!--            android:parentActivityName=".activity.LoginActivity"/>-->
-        <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ChiTietDonHangActivity"/>
-        <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ReviewActivity"/>
+        <activity android:name=".activity.admin.productfragment.ItemDetail" />
+        <activity android:name=".activity.client.homefragment.ItemFragment" />
+        <activity android:name=".activity.client.mefragment.UpdateThongTin" />
+        <activity android:name=".activity.client.mefragment.UpdatePass" /> <!-- <activity android:name=".activity.staff.StaffActivity" -->
+        <!-- android:parentActivityName=".activity.LoginActivity"/> -->
+        <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ChiTietDonHangActivity" />
+        <activity android:name=".activity.client.myordersfragment.lichsudonhangfragment.ReviewActivity" />
     </application>
 
 </manifest>

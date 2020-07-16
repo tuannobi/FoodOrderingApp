@@ -6,38 +6,41 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginBottom="10dp"
-        >
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10dp"
             android:text="Top sản phẩm bán chạy"
-            android:textSize="20dp"
+            android:paddingTop="10dp"
             android:textAlignment="center"
-            />
+            android:textColor="#FB8C00"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-       <LinearLayout
-           android:layout_width="wrap_content"
-           android:layout_height="30dp">
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Chọn Top: "
-               android:textSize="20dp"
-               android:textStyle="bold"
-               />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
 
-           <Spinner
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:id="@+id/product_spinner"
-                android:entries="@array/top_name"
-               />
-       </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn Top: "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+            <Spinner
+                android:id="@+id/product_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/top_name" />
+        </LinearLayout>
 
     </LinearLayout>
 

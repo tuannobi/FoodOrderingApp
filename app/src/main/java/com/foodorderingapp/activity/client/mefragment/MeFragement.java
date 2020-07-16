@@ -12,8 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.foodorderingapp.R;
+import com.foodorderingapp.activity.client.myordersfragment.donhangdanggiaofragment.DonHangDangGiaoFragment;
 import com.foodorderingapp.model.KhachHang;
 import com.foodorderingapp.model.TaiKhoan;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -127,7 +129,8 @@ public class MeFragement extends Fragment {
                         }
                     }
                 });
-
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.detach(MeFragement.this).attach(MeFragement.this).commit();
 
 
 
