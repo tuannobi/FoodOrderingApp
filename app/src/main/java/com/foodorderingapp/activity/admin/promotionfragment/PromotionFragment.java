@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +20,7 @@ import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
 import com.foodorderingapp.activity.admin.productfragment.ItemDetail;
+import com.foodorderingapp.model.ChiTietKhuyenMai;
 import com.foodorderingapp.model.DanhGia;
 import com.foodorderingapp.model.KhuyenMai;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -69,8 +71,15 @@ public class PromotionFragment extends Fragment {
         taokhuyenmai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 System.out.println("asfasfasfasf");
                 Intent chuyen = new Intent(getContext(),)
+=======
+                System.out.println("Clicked khuyen mai");
+                Toast.makeText(getContext(),"Clicked",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getContext(),ChiTietKhuyenMaiActivity.class);
+                startActivity(intent);
+>>>>>>> 19356241b2da38d11255b2524e2e41a051a8d403
             }
         });
     }
@@ -115,4 +124,8 @@ public class PromotionFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
 }

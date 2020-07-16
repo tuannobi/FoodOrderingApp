@@ -1,5 +1,7 @@
 package com.foodorderingapp.activity.admin.orderfragment;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.format.Time;
@@ -14,6 +16,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
@@ -48,6 +52,7 @@ public class OrderFragment extends Fragment {
     public void onViewCreated(@NonNull final View view, @Nullable final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         listView = view.findViewById(R.id.listhoadon);
+
 
         db.collection("HoaDon")
                 .whereEqualTo("trangThai", "Chờ giao hàng")
@@ -131,6 +136,7 @@ public class OrderFragment extends Fragment {
             button.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
+
                                               HoaDon hoaDonss=new HoaDon();
 
                                               Date today = new Date();

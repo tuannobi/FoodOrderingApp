@@ -18,7 +18,6 @@ import com.foodorderingapp.model.HoaDon;
 import com.foodorderingapp.model.KhuyenMai;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -67,7 +66,7 @@ public class DialogCoupon extends DialogFragment {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
                                 KhuyenMai khuyenMai = document.toObject(KhuyenMai.class);
-                                Timestamp d = Timestamp.now();
+                                Date d = new Date();
                                 System.out.println(d);
                                 System.out.println(khuyenMai.getNgayHetHan());
                                 if(d.compareTo(khuyenMai.getNgayHetHan())>0){

@@ -20,33 +20,33 @@
         android:layout_height="wrap_content">
             <RadioButton
 
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:id="@+id/motsao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1 sao"/>
             <RadioButton
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:id="@+id/haisao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2 sao"/>
             <RadioButton
                 android:layout_toRightOf="@+id/haisao"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:id="@+id/basao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3 sao"/>
             <RadioButton
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:id="@+id/bonsao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4 sao"/>
             <RadioButton
                 android:layout_below="@id/motsao"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:id="@+id/namsao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
