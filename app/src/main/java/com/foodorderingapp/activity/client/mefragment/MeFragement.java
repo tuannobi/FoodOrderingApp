@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
+import com.foodorderingapp.activity.LoginActivity;
 import com.foodorderingapp.model.KhachHang;
 import com.foodorderingapp.model.TaiKhoan;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -128,7 +129,16 @@ public class MeFragement extends Fragment {
                     }
                 });
 
+        Button buttondong=(Button) view.findViewById(R.id.dangxuatbutton);
+        buttondong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iSubsua = new Intent(getContext(), LoginActivity.class);
 
+
+                startActivity(iSubsua);
+
+            }});
 
 
     }
