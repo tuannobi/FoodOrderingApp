@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        hoTen=findViewById(R.id.hoTenEditText);
+        hoTen=(EditText)findViewById(R.id.hoTenEditText);
         Sdt=findViewById(R.id.SdtEditText);
         diaChi=findViewById(R.id.diaChiEditText);
         tenDangNhap=findViewById(R.id.usernameEditText);
