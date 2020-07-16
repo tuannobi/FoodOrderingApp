@@ -8,7 +8,6 @@
     android:backgroundTint="#f5f5f5"
     tools:context=".activity.client.RegisterActivity">
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -21,22 +20,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="90dp"
         android:layout_height="130dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/logo" />
-
     <EditText
         android:id="@+id/hoTenEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/emailfield"
         android:ems="10"
         android:hint="Họ tên"
@@ -50,7 +47,7 @@
         android:id="@+id/SdtEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/emailfield"
         android:ems="10"
         android:hint="Số điện thoại"
@@ -59,101 +56,94 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hoTenEditText" />
-
     <EditText
         android:id="@+id/EmailEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/emailfield"
         android:ems="10"
-        android:hint="Số điện thoại"
+        android:hint="email"
         android:inputType="textPersonName"
         android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SdtEditText" />
-
-
     <EditText
         android:id="@+id/diaChiEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/emailfield"
         android:ems="10"
         android:hint="Địa chỉ"
         android:inputType="textPersonName"
         android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailEditText" />
-
     <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/emailfield"
         android:ems="10"
         android:hint="Tên đăng nhập"
         android:inputType="textPersonName"
         android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SdtEditText" />
-
+        app:layout_constraintTop_toBottomOf="@+id/diaChiEditText" />
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/passwordfield"
         android:ems="10"
         android:hint="Mật khẩu"
         android:inputType="textPassword"
         android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameEditText" />
-
     <EditText
         android:id="@+id/repasswordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/passwordfield"
         android:ems="10"
         android:hint="Nhập lại Mật khẩu"
         android:inputType="textPassword"
         android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
-
-
-
     <Button
-        android:textAllCaps="false"
         android:id="@+id/registerButton"
         android:layout_width="275dp"
         android:layout_height="38dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/loginbutton"
         android:backgroundTint="#0080ff"
         android:text="Đăng ký"
-        android:textSize="20sp"
+        android:textAllCaps="false"
         android:textColor="#FFFF"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/repasswordEditText" />
-
     <TextView
         android:id="@+id/quoteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:text="Chúng tôi sẽ không sử dụng thông tin của bạn cho bất kỳ mục đích nào khác.
 Bằng cách đăng ký, bạn đồng ý các điều khoản sử dụng"
         android:textAlignment="center"
@@ -162,5 +152,4 @@ Bằng cách đăng ký, bạn đồng ý các điều khoản sử dụng"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerButton" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
