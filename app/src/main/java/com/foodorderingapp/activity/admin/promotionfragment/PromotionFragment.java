@@ -1,6 +1,7 @@
 package com.foodorderingapp.activity.admin.promotionfragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,6 +35,7 @@ public class PromotionFragment extends Fragment {
     Button taokhuyenmai;
     ListView listView;
     ArrayList<KhuyenMai> khuyenMais =null;
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_promotion_main,container,false);
     }
@@ -64,6 +66,13 @@ public class PromotionFragment extends Fragment {
                         }
                     }
                 });
+        taokhuyenmai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("asfasfasfasf");
+                Intent chuyen = new Intent(getContext(),)
+            }
+        });
     }
     private void AnhXa(View view){
         taokhuyenmai = view.findViewById(R.id.taokhuyenmai);
