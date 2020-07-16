@@ -70,9 +70,9 @@ public class PromotionFragment extends Fragment {
         taokhuyenmai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Clicked khuyen mai");
-                Toast.makeText(getContext(),"Clicked",Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(getContext(),ChiTietKhuyenMaiActivity.class);
+//                System.out.println("Clicked khuyen mai");
+//                Toast.makeText(getContext(),"Clicked",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(view.getContext(),ChiTietKhuyenMaiActivity.class);
                 startActivity(intent);
             }
         });
