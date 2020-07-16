@@ -15,10 +15,13 @@
         android:textSize="25sp"
         android:textColor="#FB8C00"/>
     <Button
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:id="@+id/taokhuyenmai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tạp Khuyến Mãi"/>
+        android:text="Tạo Khuyến Mãi"
+        android:background="#FB8C00"/>
     <ListView
         android:id="@+id/danhsachkhuyenmai"
         android:layout_width="match_parent"

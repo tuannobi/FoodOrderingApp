@@ -6,20 +6,22 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginBottom="10dp"
         >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thống kê doanh thu theo hóa đơn "
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Thống kê doanh thu theo hóa đơn"
+            android:textColor="#FB8C00"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"

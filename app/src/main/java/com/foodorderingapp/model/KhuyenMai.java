@@ -1,20 +1,18 @@
 package com.foodorderingapp.model;
 
-import com.google.firebase.Timestamp;
-
 import java.util.Date;
 
 public class KhuyenMai {
     private String khuyenMaiId;
-    private Timestamp ngayTao;
-    private Timestamp ngayHetHan;
+    private Date ngayTao;
+    private Date ngayHetHan;
     private float phanTramGiam;
 
 
     public KhuyenMai() {
     }
 
-    public KhuyenMai(String khuyenMaiId, Timestamp ngayTao, Timestamp ngayHetHan, float phanTramGiam) {
+    public KhuyenMai(String khuyenMaiId, Date ngayTao, Date ngayHetHan, float phanTramGiam) {
         this.khuyenMaiId = khuyenMaiId;
         this.ngayTao = ngayTao;
         this.ngayHetHan = ngayHetHan;
@@ -29,19 +27,19 @@ public class KhuyenMai {
         this.khuyenMaiId = khuyenMaiId;
     }
 
-    public Timestamp getNgayTao() {
+    public Date getNgayTao() {
         return ngayTao;
     }
 
-    public void setNgayTao(Timestamp ngayTao) {
+    public void setNgayTao(Date ngayTao) {
         this.ngayTao = ngayTao;
     }
 
-    public Timestamp getNgayHetHan() {
+    public Date getNgayHetHan() {
         return ngayHetHan;
     }
 
-    public void setNgayHetHan(Timestamp ngayHetHan) {
+    public void setNgayHetHan(Date ngayHetHan) {
         this.ngayHetHan = ngayHetHan;
     }
 
