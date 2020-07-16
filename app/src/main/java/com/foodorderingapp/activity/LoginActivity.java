@@ -57,6 +57,9 @@ public class LoginActivity extends AppCompatActivity {
     private void registerEvent() {
 
     }
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
     private void loginButtonEvent(){
         loginButton.setOnClickListener(new View.OnClickListener() {

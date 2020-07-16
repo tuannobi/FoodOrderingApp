@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#FFF"
     android:orientation="vertical"
@@ -81,6 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <ImageButton
+
                     android:background="#FFF"
                     android:onClick="bamNutSubtract"
                     android:src="@drawable/minuss"
@@ -112,17 +114,22 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginRight="20dp" />
+
                 <Button
-                    android:layout_toRightOf="@id/addd"
-                    android:layout_centerVertical="true"
+                    android:shadowRadius="@integer/google_play_services_version"
                     android:id="@+id/mua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="100dp"
+                    android:layout_toRightOf="@id/addd"
                     android:background="#EA8025"
+                    android:text="29.000d"
                     android:textColor="#ffffff"
                     android:textSize="15sp"
-                    android:text="29.000d"
-                    android:layout_marginLeft="100dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent" />
             </RelativeLayout>
         </RelativeLayout>
 

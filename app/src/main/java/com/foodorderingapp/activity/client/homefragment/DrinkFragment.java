@@ -207,7 +207,8 @@ public class DrinkFragment extends Fragment {
 //        holder.ivHinh.setImageResource(sanpham.getHinhAnhId());
             holder.ivNut.setImageResource(R.drawable.icon_add);
             holder.textView1.setText(sanpham.getTenSanPham());
-            holder.textView2.setText(sanpham.getGiaBanLe()+"");
+            int giaa = (int)sanpham.getGiaBanLe();
+            holder.textView2.setText(giaa+"đ");
 
 
             return v;

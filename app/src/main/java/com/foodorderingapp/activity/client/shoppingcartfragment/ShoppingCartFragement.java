@@ -101,9 +101,12 @@ public class ShoppingCartFragement extends Fragment {
                                 chiTietHoaDon1s = (ArrayList<ChiTietHoaDon>) h.get(0).getChiTietHoaDon();
                                 adapter = new HoaDonAdapter(view.getContext(), chiTietHoaDon1s);
                                 gridView.setAdapter(adapter);
-                                textViewPhiShip.setText(h.get(0).getPhiShip()+"đ");
-                                textViewTongTien.setText(h.get(0).getTongTienThanhToan() + "đ");
-                                tienkhuyenmai.setText("- "+h.get(0).getTienKhuyenMai()+" đ");
+                                int phii = (int)h.get(0).getPhiShip();
+                                int tongg = (int)h.get(0).getTongTienThanhToan();
+                                int maii = (int)h.get(0).getTienKhuyenMai();
+                                textViewPhiShip.setText(phii+"đ");
+                                textViewTongTien.setText(tongg+ "đ");
+                                tienkhuyenmai.setText("- "+maii+"đ");
                             }
 
 
@@ -219,7 +222,8 @@ public class ShoppingCartFragement extends Fragment {
             ChiTietHoaDon chitiethoadon = chiTietHoaDon1List.get(position);
             holder.sl.setText(chitiethoadon.getSoLuong()+"");
             holder.sp.setText(chitiethoadon.getTenSanPham()+"");
-            holder.tien.setText(chitiethoadon.getTongTien()+"đ");
+            int adaptongtien = (int)chitiethoadon.getTongTien();
+            holder.tien.setText(adaptongtien+"đ");
 
             return row;
         }
