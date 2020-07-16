@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -70,6 +71,7 @@ public class PromotionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 System.out.println("Clicked khuyen mai");
+                Toast.makeText(getContext(),"Clicked",Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(getContext(),ChiTietKhuyenMaiActivity.class);
                 startActivity(intent);
             }
@@ -116,4 +118,8 @@ public class PromotionFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
 }
