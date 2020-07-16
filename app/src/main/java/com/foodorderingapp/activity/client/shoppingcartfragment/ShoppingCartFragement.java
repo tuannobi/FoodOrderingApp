@@ -75,7 +75,7 @@ public class ShoppingCartFragement extends Fragment {
         db.collection("KhachHang").document(taiKhoanId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                System.out.println("Doanh thu kahsch hang: " +documentSnapshot.toObject(KhachHang.class).getDoanhThu());
+                System.out.println("Doanh thu khach hang: " +documentSnapshot.toObject(KhachHang.class).getDoanhThu());
                 doanhthukhachhang[0] = documentSnapshot.toObject(KhachHang.class).getDoanhThu();
             }
         });

@@ -12,10 +12,19 @@ public class SanPham implements Serializable {
     private String phanLoaiId;
     private String moTa;
     private float doanhThu;
+    private int soLuongNguoiMua=0;
     public SanPham() {
     }
 
-    public SanPham(String sanPhamId, String tenSanPham, float giaGoc, float giaBanLe, String trangThai, String phanLoaiId,String hinhAnhId,String moTa,float doanhThu) {
+    public int getSoLuongNguoiMua() {
+        return soLuongNguoiMua;
+    }
+
+    public void setSoLuongNguoiMua(int soLuongNguoiMua) {
+        this.soLuongNguoiMua = soLuongNguoiMua;
+    }
+
+    public SanPham(String sanPhamId, String tenSanPham, float giaGoc, float giaBanLe, String trangThai, String phanLoaiId, String hinhAnhId, String moTa, float doanhThu) {
         this.sanPhamId = sanPhamId;
         this.tenSanPham = tenSanPham;
         this.giaGoc = giaGoc;

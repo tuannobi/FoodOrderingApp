@@ -17,11 +17,17 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
+import com.foodorderingapp.model.ChiTietHoaDon;
 import com.foodorderingapp.model.HoaDon;
 import com.foodorderingapp.model.KhachHang;
+import com.foodorderingapp.model.SanPham;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -45,6 +51,7 @@ public class OrderFragment extends Fragment {
 
         db.collection("HoaDon")
                 .whereEqualTo("trangThai", "Chờ giao hàng")
+                .orderBy("thoiGianDatHang", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value,
@@ -144,6 +151,23 @@ public class OrderFragment extends Fragment {
                                               hoaDonss.setTongTienThanhToan(hoaDons.get(position).getTongTienThanhToan());
                                               hoaDonss.setThoiGianGiaoHangThanhCong(today);
                                               hoaDonss.setTrangThai("Giao thành công");
+                                              //Thêm vào
+//                                              for(final ChiTietHoaDon chiTietHoaDon:hoaDons.get(position).getChiTietHoaDon()){
+//                                                  DocumentReference docRef = db.collection("SanPham").document(chiTietHoaDon.getSanPhamId());
+//                                                  docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+//                                                      @Override
+//                                                      public void onSuccess(DocumentSnapshot documentSnapshot) {
+//                                                          SanPham sanPham = documentSnapshot.toObject(SanPham.class);
+//                                                          int soLuongCu=sanPham.getSoLuongNguoiMua();
+//                                                          db.collection("SanPham")
+//                                                                  .document(chiTietHoaDon.getSanPhamId())
+//                                                                  .update("soLuongNguoiMua",soLuongCu+1);
+//                                                      }
+//                                                  });
+//
+//                                              }
+                                              //
+
                                               db.collection("HoaDon").document(hoaDons.get(position).getHoaDonId()).set(hoaDonss);
 
                                           }});

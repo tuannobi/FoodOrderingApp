@@ -66,24 +66,24 @@ public class DanhGiaDialog extends AppCompatDialogFragment {
                 danhGia.setSanPhamId(sanPhamId);
                 System.out.println("Clicked");
                 System.out.println(danhGia.toString());
-//                db.collection("DanhGia")
-//                        .add(danhGia)
-//                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-//                            @Override
-//                            public void onSuccess(DocumentReference documentReference) {
-//                                Log.d("TAG", "DocumentSnapshot written with ID: " + documentReference.getId());
-//                                danhGia.setDanhGiaId(documentReference.getId());
-//
-//                                System.out.println(danhGia.toString());
-//                                Toast.makeText(getContext(),"Gửi đánh giá thành công",Toast.LENGTH_SHORT).show();
-//                            }
-//                        })
-//                        .addOnFailureListener(new OnFailureListener() {
-//                            @Override
-//                            public void onFailure(@NonNull Exception e) {
-//                                Log.w("TAG", "Error adding document", e);
-//                            }
-//                        });
+                db.collection("DanhGia")
+                        .add(danhGia)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Log.d("TAG", "DocumentSnapshot written with ID: " + documentReference.getId());
+                                danhGia.setDanhGiaId(documentReference.getId());
+                                db.collection("DanhGia").document(documentReference.getId()).set(danhGia);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w("TAG", "Error adding document", e);
+                            }
+                        });
+
+                Toast.makeText(getContext(),"Gửi đánh giá thành công",Toast.LENGTH_SHORT).show();
                 dismiss();
             }
         });

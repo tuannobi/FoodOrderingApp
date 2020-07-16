@@ -30,6 +30,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -73,32 +74,116 @@ public class ProductStatisticsFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+
+//                db.collection("SanPham")
+//                        .limit(Integer.parseInt(spinner.getSelectedItem().toString()))
+//                        .get()
+//                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                            @Override
+//                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                                if (task.isSuccessful()) {
+//                                    for (QueryDocumentSnapshot document : task.getResult()) {
+//                                        final String sanPhamId=document.toObject(SanPham.class).getSanPhamId();
+//                                        final int soLuongCu=document.toObject(SanPham.class).getSoLuongNguoiMua();
+//                                            db.collection("HoaDon")
+//                                                    .whereEqualTo("trangThai", "Giao thành công")
+//                                                    .get()
+//                                                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                                                        @Override
+//                                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                                                            if (task.isSuccessful()) {
+//                                                                for (QueryDocumentSnapshot document : task.getResult()) {
+//                                                                    for(ChiTietHoaDon cthd:document.toObject(HoaDon.class).getChiTietHoaDon()){
+//                                                                        if(cthd.getSanPhamId().equals(sanPhamId)){
+//                                                                            db.collection("SanPham")
+//                                                                                    .document(sanPhamId).update("soLuongNguoiMua",soLuongCu+1);
+//                                                                        }
+//                                                                    }
+//                                                                }
+//                                                            } else {
+//                                                                Log.d("TAG", "Error getting documents: ", task.getException());
+//                                                            }
+//                                                        }
+//                                                    });
+//                                    }
+//                                } else {
+//                                    Log.d("TAG", "Error getting documents: ", task.getException());
+//                                }
+//                            }
+//                        });
+
+
                 db.collection("SanPham")
+                        .orderBy("soLuongNguoiMua", Query.Direction.DESCENDING)
                         .limit(Integer.parseInt(spinner.getSelectedItem().toString()))
-                        .addSnapshotListener( new EventListener<QuerySnapshot>() {
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
-                            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
-                                if (e!=null){
-                                    return;
-                                }
-                                final List<SanPham> sanPhams = new ArrayList<>();
-
-                                if (queryDocumentSnapshots != null) {
-                                    System.out.println(queryDocumentSnapshots.getDocuments().size());
-                                    if(queryDocumentSnapshots.getDocuments().size()>0) {
-                                        for (DocumentSnapshot doc : queryDocumentSnapshots) {
-                                            sanPhams.add(doc.toObject(SanPham.class));
-                                            System.out.println(doc.toObject(SanPham.class).getTenSanPham());
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                List<Integer> soLanList=new ArrayList<>();
+                                List<String> tenSanPham=new ArrayList<>();
+                                if (task.isSuccessful()) {
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        if(document.toObject(SanPham.class).getSoLuongNguoiMua()>0){
+                                            tenSanPham.add(document.toObject(SanPham.class).getTenSanPham());
+                                            soLanList.add(document.toObject(SanPham.class).getSoLuongNguoiMua());
                                         }
-
                                     }
-
-                                } else{
-                                    Log.d("TAG", "Current data: null");
+                                    setChart(tenSanPham,soLanList);
+                                } else {
+                                    Log.d("TAG", "Error getting documents: ", task.getException());
                                 }
-
                             }
                         });
+//                db.collection("SanPham")
+//                        .limit(Integer.parseInt(spinner.getSelectedItem().toString()))
+//                        .addSnapshotListener( new EventListener<QuerySnapshot>() {
+//                            @Override
+//                            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+//                                if (e!=null){
+//                                    return;
+//                                }
+//                                List<SanPham> sanPhams = new ArrayList<>();
+//
+//                                if (queryDocumentSnapshots != null) {
+//                                    System.out.println(queryDocumentSnapshots.getDocuments().size());
+//                                    if(queryDocumentSnapshots.getDocuments().size()>0) {
+//                                        for (DocumentSnapshot doc : queryDocumentSnapshots) {
+//                                            sanPhams.add(doc.toObject(SanPham.class));
+//                                            System.out.println(doc.toObject(SanPham.class).getTenSanPham());
+//                                            final String maSanPham=doc.toObject(SanPham.class).getSanPhamId();
+//                                            final int soLuongNguoiMua=doc.toObject(SanPham.class).getSoLuongNguoiMua();
+//                                            db.collection("HoaDon")
+//                                                    .whereEqualTo("trangThai","Giao thành công")
+//                                                    .get()
+//                                                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                                                        @Override
+//                                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                                                            if (task.isSuccessful()) {
+//                                                                for (QueryDocumentSnapshot document : task.getResult()) {
+//                                                                    for(ChiTietHoaDon cthd:document.toObject(HoaDon.class).getChiTietHoaDon()){
+//                                                                        if(cthd.getSanPhamId().equals(maSanPham)){
+//                                                                            db.collection("SanPham")
+//                                                                                    .document(maSanPham)
+//                                                                                    .update("soLuongNguoiMua",soLuongNguoiMua+1);
+//                                                                        }
+//                                                                    }
+//                                                                }
+//                                                            } else {
+//                                                                Log.d("TAG", "Error getting documents: ", task.getException());
+//                                                            }
+//                                                        }
+//                                                    });
+//                                        }
+//                                    }
+//
+//                                } else{
+//                                    Log.d("TAG", "Current data: null");
+//                                }
+//
+//                            }
+//                        });
 
 //                db.collection("KhachHang")
 //                        .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -130,11 +215,11 @@ public class ProductStatisticsFragment extends Fragment {
 
     }
 
-    public void setChart(String[] tenSanPhamArray,Integer[] soLanArray){
+    public void setChart(List<String> tenSanPhamArray,List<Integer> soLanArray){
         ArrayList values1 = new ArrayList();
 
-        for(int i=0;i<soLanArray.length;i++){
-            values1.add(new BarEntry(i, soLanArray[i]));
+        for(int i=0;i<soLanArray.size();i++){
+            values1.add(new BarEntry(i, soLanArray.get(i)));
         }
 
 //        ArrayList valuesWomen = new ArrayList();
@@ -154,12 +239,13 @@ public class ProductStatisticsFragment extends Fragment {
 
         ArrayList month = new ArrayList();
 
-        for(int i=0;i<tenSanPhamArray.length;i++){
-            month.add(tenSanPhamArray[i]);
+        for(int i=0;i<tenSanPhamArray.size();i++){
+            month.add(tenSanPhamArray.get(i));
         }
 
         XAxis xAxis = chart.getXAxis();
         xAxis.setValueFormatter(new IndexAxisValueFormatter(month));
+        xAxis.setLabelRotationAngle(-45);
 //        xAxis.setCenterAxisLabels(true);
 
         // create 2 datasets
@@ -177,7 +263,8 @@ public class ProductStatisticsFragment extends Fragment {
         BarData data = new BarData(set1);
 //        data.setBarWidth(barWidth);
         chart.setData(data);
-        chart.setVisibleXRangeMaximum(10);
+        chart.setVisibleXRangeMaximum(5);
+
 //        chart.groupBars(0f,groupSpace,barSpace);
         chart.invalidate();
 
