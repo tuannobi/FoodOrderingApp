@@ -11,7 +11,6 @@ import com.foodorderingapp.R;
 import com.foodorderingapp.activity.client.homefragment.HomeFragement;
 import com.foodorderingapp.activity.client.mefragment.MeFragement;
 //import com.foodorderingapp.activity.client.myordersfragment.MyOrdersFragement;
-import com.foodorderingapp.activity.client.mefragment.MeFragement;
 import com.foodorderingapp.activity.client.myordersfragment.MyOrdersFragement;
 import com.foodorderingapp.activity.client.shoppingcartfragment.ShoppingCartFragement;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
