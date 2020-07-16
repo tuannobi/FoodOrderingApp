@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.foodorderingapp.R;
 import com.foodorderingapp.activity.admin.AdminMainActivity;
 import com.foodorderingapp.activity.client.MainActivity;
+import com.foodorderingapp.activity.client.RegisterActivity;
 import com.foodorderingapp.model.TaiKhoan;
 import com.foodorderingapp.model.VaiTro;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText userNameEditText;
     private EditText passwordEditText;
     private Button loginButton;
+    private TextView registerTextView;
     private static final String CUSTOMER_ROLE="Khách hàng";
     private static final String SELLINGSTAFF_ROLE="Nhân viên bán hàng";
     private static final String SHIPPINGSTAFF_ROLE="Nhân viên giao hàng";
@@ -40,7 +43,19 @@ public class LoginActivity extends AppCompatActivity {
         userNameEditText=findViewById(R.id.usernameEditText);
         passwordEditText=findViewById(R.id.passwordEditText);
         loginButton=findViewById(R.id.loginButton);
+        registerTextView=findViewById(R.id.registerTextView);
         loginButtonEvent();
+        registerTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this, RegisterActivity.class);
+                LoginActivity.this.startActivity(intent);
+            }
+        });
+    }
+
+    private void registerEvent() {
+
     }
 
     private void loginButtonEvent(){

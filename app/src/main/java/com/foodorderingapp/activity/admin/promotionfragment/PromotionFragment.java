@@ -1,6 +1,7 @@
 package com.foodorderingapp.activity.admin.promotionfragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import androidx.fragment.app.Fragment;
 
 import com.foodorderingapp.R;
 import com.foodorderingapp.activity.admin.productfragment.ItemDetail;
+import com.foodorderingapp.model.ChiTietKhuyenMai;
 import com.foodorderingapp.model.DanhGia;
 import com.foodorderingapp.model.KhuyenMai;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -64,6 +66,14 @@ public class PromotionFragment extends Fragment {
                         }
                     }
                 });
+        taokhuyenmai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Clicked khuyen mai");
+                Intent intent=new Intent(getContext(),ChiTietKhuyenMaiActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     private void AnhXa(View view){
         taokhuyenmai = view.findViewById(R.id.taokhuyenmai);
