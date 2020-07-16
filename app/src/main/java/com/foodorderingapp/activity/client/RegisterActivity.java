@@ -96,7 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     khachHang.setDiaChi(diaChiTemp);
                                     khachHang.setTaiKhoanId(documentReference.getId());
                                     khachHang.setEmail(tempEmail);
-                                    db.collection("TaiKhoan")
+                                    db.collection("KhachHang")
                                             .add(khachHang)
                                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                                 @Override
